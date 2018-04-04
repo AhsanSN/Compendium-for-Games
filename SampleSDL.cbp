@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Game" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/SampleSDL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="C:/Program Files (x86)/CodeBlocks/sdl ka chakkar/lib" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer" />
+					<Add directory="C:/Program Files (x86)/CodeBlocks/sdl ka chakkar/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/SampleSDL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="../Game" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:/mingw_dev_lib/include/SDL2" />
+		</Compiler>
+		<Linker>
+			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer" />
+			<Add directory="C:/mingw_dev_lib/lib" />
+		</Linker>
+		<Unit filename="Ball.cpp" />
+		<Unit filename="Ball.h" />
+		<Unit filename="Board.cpp" />
+		<Unit filename="Board.h" />
+		<Unit filename="BossBrick.cpp" />
+		<Unit filename="BossBrick.h" />
+		<Unit filename="Brick.cpp" />
+		<Unit filename="Brick.h" />
+		<Unit filename="Bullet.cpp" />
+		<Unit filename="Bullet.h" />
+		<Unit filename="Button.cpp" />
+		<Unit filename="Button.h" />
+		<Unit filename="Entity.cpp" />
+		<Unit filename="Entity.h" />
+		<Unit filename="FileIO.cpp" />
+		<Unit filename="FileIO.h" />
+		<Unit filename="GUI.cpp" />
+		<Unit filename="GUI.h" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.h" />
+		<Unit filename="GameCompleteScreen.cpp" />
+		<Unit filename="GameCompleteScreen.h" />
+		<Unit filename="GameOver.cpp" />
+		<Unit filename="GameOver.h" />
+		<Unit filename="InvisibleBrick.cpp" />
+		<Unit filename="InvisibleBrick.h" />
+		<Unit filename="LTexture.cpp" />
+		<Unit filename="LTexture.h" />
+		<Unit filename="List.cpp" />
+		<Unit filename="List.h" />
+		<Unit filename="LoadGameScreen.cpp" />
+		<Unit filename="LoadGameScreen.h" />
+		<Unit filename="MainMenu.cpp" />
+		<Unit filename="MainMenu.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
+		<Unit filename="Missile.cpp" />
+		<Unit filename="Missile.h" />
+		<Unit filename="MobileBrick.cpp" />
+		<Unit filename="MobileBrick.h" />
+		<Unit filename="MobileBrickX.cpp" />
+		<Unit filename="MobileBrickX.h" />
+		<Unit filename="MobileBrickY.cpp" />
+		<Unit filename="MobileBrickY.h" />
+		<Unit filename="Node.h" />
+		<Unit filename="OneHitBrick.cpp" />
+		<Unit filename="OneHitBrick.h" />
+		<Unit filename="Paddle.cpp" />
+		<Unit filename="Paddle.h" />
+		<Unit filename="PauseMenu.cpp" />
+		<Unit filename="PauseMenu.h" />
+		<Unit filename="Point.cpp" />
+		<Unit filename="Point.h" />
+		<Unit filename="PowerUp.cpp" />
+		<Unit filename="PowerUp.h" />
+		<Unit filename="ResistantBullet.cpp" />
+		<Unit filename="ResistantBullet.h" />
+		<Unit filename="Screens.cpp" />
+		<Unit filename="Screens.h" />
+		<Unit filename="Smasher.cpp" />
+		<Unit filename="Smasher.h" />
+		<Unit filename="SteelBrick.cpp" />
+		<Unit filename="SteelBrick.h" />
+		<Unit filename="Text.cpp" />
+		<Unit filename="Text.h" />
+		<Unit filename="ThreeHitBrick.cpp" />
+		<Unit filename="ThreeHitBrick.h" />
+		<Unit filename="TwoHitBrick.cpp" />
+		<Unit filename="TwoHitBrick.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,2289 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+fontsize=10
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>1134</y>
+      <w>204</w>
+      <h>276</h>
+    </coordinates>
+    <panel_attributes>Ball
+bg=green
+-
+- spriteClips[ NUM_BALL_MODE ]:SDL_Rect
+- sparkleSpriteClips[8]:SDL_Rect
+- BallType:int
+- leftBound:int
+- rightBound:int
+- upperBound:int
+- lowerBound:int
+- gameBoard: Board*
+- stick: bool
+- primary:bool
+- powerTime=0:int
+- paddle:Paddle*
+- ballBoard:Mix_Chunk*
+- paddleCollision:bool
+- positionDifference:float
+--
++ Ball(LTexture*, Board* ,Point)
+/+ ~Ball()/
++ render(long int&amp;, SDL_Renderer* gRenderer): void
++ move(List*=NULL):void
++ startMove(SDL_Event&amp;):void
++ setBallType(int):void
++ getBallType():int
++ startMove(SDL_Event&amp;):bool
++ stickToPaddle():void
++ isStuck():bool
++ setStick(bool):void
++ setDir(float,float):void
++ reset():void
++ setPaddle(Paddle*):void
++ setPowerTime(int):void
++ getBallPowerTime():int
++ isPrimary():bool
++ takeCollisionAction(int):void
++ setPaddleCollision(bool):void
++ BALL_MODE:BALL_MODE
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>672</y>
+      <w>222</w>
+      <h>384</h>
+    </coordinates>
+    <panel_attributes>/Entity/
+bg=yellow
+-
+# pos:Point
+# bounds:SDL_Rect
+# alive:bool
+# width:int
+# height:int
+# dx:float
+# dy:float
+# speed:float
+# expFrame:int
+# spriteSheetTexture:LTexture*
+# objectFrame:int
+-
++ Entity(LTexture*, Point)
+/+ ~Entity()/
++ getPos(): Point
++ getWidth(): int
++ getHeight(): int
++ getBounds(): SDL_Rect
+/+ render(long int&amp;, SDL_Renderer* gRenderer): void/
+/+ setAlive(bool): void/
++ setPos(Point) : void
++ setPosX(int) : void
++ setPosY(int) : void
++ getAlive():bool
++ getSpeed():float
+/+ move(List* = NULL):void/
++ insideBounds(int,int):bool
+/+ incrementDmg():int/
+/+ void setDir(float,float):void/
+/+ stickToPaddle():void/
+/+ getPower():bool/
+/+ getWhich(}:int/
+/+ getDamage():int/
+/+ getColor():int/
+/+ getPaddleMode():int/
+/+ getPaddleSize():int/
+/+ getModeTime():int/
+/+ getSizeTime():int/
+/+ getBallPowerTime:int/
+/+ getBallType():int/
+/+ setPower(Paddle*, Ball*):void/
+/+ isPrimary():bool/ 
++ getType():int
++ getPos():Point
++ setBounds():void
++ getDX():float
++ getDY():float
+/+ reset():void/
+/+ getTargeted():bool/
+/+ setTargeted(bool):void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1026</x>
+      <y>960</y>
+      <w>210</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Paddle
+bg=green
+--
++ PADDLE_MODES:PADDLE_MODES
++ PADDLE_SIZES:PADDLE_SIZES
+- length:int
+# spriteClips[ NUM_PADDLE_SPRITES ]:SDL_Rect
+# expSpriteClips[ NUM_EXP_SPRITES ]:SDL_Rect
+# spriteClips[NUM_PADDLE_MODES][NUM_PADDLE_SIZES]:SDL_Rect
+# mode:int
+# size:int
+# widthList[NUM_PADDLE_SIZES]:int
+# heightList[NUM_PADDLE_MODES]:int
+# mouseX:int
+# gameBoard:Board*
+# ball:Ball*
+--
+Paddle(LTexture*,Board*,Point)
++ move():void
++ render(long int&amp;, SDL_Renderer* gRenderer): void
++ setBounds():void
++ fireUp():void
++ turtleDown():void
++ restoreMode():void
++ diminish():void
++ enlarge():void
++ restoreSize():void
++ setMouseX(SDL_Event&amp;):void
++ move():void
++ setPower():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>1092</y>
+      <w>204</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>/Brick/
+--
++ NUM_BRICK_FRAMES: const int= 5
++ NUM_BRICK_COLORS: const int= 5
+# brickDamage:int
+# brickHealth:int
+# color:int
+# spriteClips[NUM_BRICK_COLORS][NUM_BRICK_FRAMES]:SDL_Rect
+# gameBoard:Board*
+# isPowered:bool
+# targeted:bool
+-
+Brick(LTexture*,Point)
+# setDimensions(int,int):void
+# incrementDmg():void
++ getPower():bool
++ getDamage():int
++ getColor():int
++ setColor(int):void
++ setPowered(bool):void
++ setDamage(int):void
++ setTargeted(bool):void
++ getTargeted():bool
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>1290</y>
+      <w>162</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ThreeHitBrick
+--
++ThreeHitBrick(LTexture*,Point)
++render(long int&amp;, SDL_Renderer*):void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>684</x>
+      <y>1506</y>
+      <w>162</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>/MobileBrick/
+--
++MobileBrick(LTexture*,Board*, Point*)
++render(long int&amp;, SDL_Renderer*):void
+/+ move(List* = NULL):void/
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>534</x>
+      <y>1428</y>
+      <w>162</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>TwoHitBrick
+--
++TwoHitBrick(LTexture*,Board*,Point)
++render(long int&amp;, SDL_Renderer*):void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>1512</y>
+      <w>162</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>OneHitBrick
+--
++OneHitBrick(LTexture*,Point)
++render(long int&amp;, SDL_Renderer*):void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>366</x>
+      <y>1050</y>
+      <w>54</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;70.0;50.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>366</x>
+      <y>1074</y>
+      <w>18</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>1266</y>
+      <w>18</w>
+      <h>258</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>1266</y>
+      <w>18</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>594</x>
+      <y>1266</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>1266</y>
+      <w>198</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>786</y>
+      <w>270</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>LTexture
+--
+- texture:SDL_Texture*
+- width:int
+- height:int
+-
++ LTexture()
++ ~LTexture()
++ loadFromFile(string, SDL_Renderer*):bool
++ free():void
++ setColor(Uint8,Uint8,Uint8):void
++ setBlendMode(SDL_BlendMode):void
++ setAlpha(Uint8):void
++ render(int,int,SDL_Rect*,double,SDL_Point*,SDL_RendererFlip):void
++ getWidth():int
++ getHeight():int
+bg=gray
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>1266</y>
+      <w>42</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>870</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>132</x>
+      <y>576</y>
+      <w>126</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Point
+bg=blue
+--
++ x:float
++ y:float
+--
++ Point()
++ Point(float,float)
++ Point(const Point&amp;)
++ operator=(const Point&amp;):void
++ operator++(int):void
++ operator++():void
++ operator--(int):void
++ operator--():void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>636</y>
+      <w>66</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;340.0;60.0;340.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>108</x>
+      <y>858</y>
+      <w>78</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>110.0;40.0;110.0;80.0;10.0;80.0;10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>138</x>
+      <y>834</y>
+      <w>126</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Node
+bg=blue
+--
++ ent:Entity*
++ next:Node*
++ prev:Node*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>258</x>
+      <y>858</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>42</x>
+      <y>930</y>
+      <w>210</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>List
+bg=blue
+--
+- start:Node*
+- end:Node*
+--
++ List()
++ ~List()
++ operator=(const List&amp;):List&amp;
++ size()const:int
++ removeNodeAtInd(int):bool
++ append(Entity*):bool
++ clean():void
++ empty():void
++ getNodeInd(Node*):int
++ getEntInd(Entity*):int
++ getEntAtInd(int):Entity*
++ render(long int&amp;, SDL_Renderer*): void
++ move():void
++ &lt;&lt;friend&gt;&gt; class Game
++ getBrickCount():int
++ resetEntities():void
++ getAliveCount():int
++ getStart():Node*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>876</y>
+      <w>84</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;170.0;120.0;170.0;120.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>48</x>
+      <y>54</y>
+      <w>360</w>
+      <h>894</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>580.0;50.0;580.0;10.0;20.0;10.0;10.0;1470.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>594</x>
+      <y>234</y>
+      <w>222</w>
+      <h>222</h>
+    </coordinates>
+    <panel_attributes>Board
+bg=blue
+--
+-spriteClips[4] : SDL_Rect
+-SCREEN_WIDTH : int
+-SCREEN_HEIGHT : int
+-DAYTIME = 45 : const int
+-gSpriteSheetTexture : LTexture*
+-sparkleSpriteClips[8] : SDL_Rect
+-sparkleWidth : int
+-sparkleHeight : int
+-sparklePos : int
+-powerCollect : bool
+-bgTexture : LTexture
+-r : int
+-g : int
+-b : int
+-bgRect : SDL_Rect
+-dayChange : bool
+-day : bool
+-scrollingOffset : float 
+-mainDay : Mix_Music
+-mainNight : Mix_Music*
+-
++render(SDL_Renderer*) : void
++setDimensions(int,int) : void
++playDayMusic() : void
++playNightMusic() : void
++sparkleOn() : void
++friend class FileIO
++isDay() : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>336</y>
+      <w>78</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>402</x>
+      <y>1074</y>
+      <w>228</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>606</x>
+      <y>1254</y>
+      <w>18</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>378</y>
+      <w>384</w>
+      <h>594</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0;200.0;920.0;620.0;920.0;620.0;970.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1062</x>
+      <y>330</y>
+      <w>198</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>FileIO
+bg=blue
+--
+- COL:const int = 20
+- ROW:const int = 16
+- inFile:ifstream
+- outFile:ofstream
+- mode:int
+--
++ openFile(string):int
++ FILEIO_MODES {LOAD_LEVEL,SAVE_STATE,LOAD_STATE}:enum
++ FileIO(int=LOAD_LEVEL)
++ ~FileIO()    
++ checkFile():bool
++ handleFile(Board*, Game*):void
++ closeFile():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>936</y>
+      <w>492</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>lt=.
+</panel_attributes>
+    <additional_attributes>800.0;40.0;800.0;20.0;10.0;20.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>660</y>
+      <w>156</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>Button
+bg=red
+--
++buttonText* : Text
++buttonRects[2]:SDL_Rect
+-State:int
+--
++render(long int&amp;,SDL_Renderer*):void
++setRect(SDL_Rect&amp;):void
++setPosition(int x, int y):void
++getState():int
++setState():int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>582</x>
+      <y>636</y>
+      <w>162</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>Text
+bg=red
+--
++ color : int 
+- Characters:map&lt;char,SDL_Rect&gt; 
+- SCREEN_WIDTH:int
+- SCREEN_HEIGHT:int
+- text : string 
+- Characters : map&lt;char,SDL_Rect&gt; 
+--
++ Text(string,LTexture*,Point)
++ render(long int&amp;,SDL_Renderer*): void
++ ~Text()
++ Text(const Text&amp;)    
++ setDimensions(int,int):void
++ setPosition(int x, int y):void
++ setText(string str):void
++ setSize(int size) : void
++ handleEvents(SDL_Event&amp; e) : void
+    </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>234</x>
+      <y>1530</y>
+      <w>216</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>PowerUp
+bg=blue
+--
+- which:int
+- gameBoard:Board*
+- spriteClips[ NUM_POWERUP_SPRITES ]:SDL_Rect
+--
++ PowerUp(LTexture*,Board*, Point)
++ ~PowerUp()
++ move(List*=NULL):void
++ render(long int&amp;, SDL_Renderer* gRenderer): void
++ getWhich():int
++ setPower(Paddle*, Ball*):void
++ setWhich(int):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1506</x>
+      <y>684</y>
+      <w>162</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>MainMenu
+bg=red
+-
++loadState : LoadGameScreen* 
++gameStart: bool 
+-firstTick : Uint32
+-showCredits : bool 
+-creditsSound : Mix_Music* 
+-heading : Text* 
+-credits : LTexture
+-bgRect : SDL_Rect
+-scrollingOffset : float
+-
+enum Buttons {PLAY,LOAD,CREDITS,QUIT,BUTTONSMAX};
++handleEvents(SDL_Event&amp; e): void
++render(SDL_Renderer* gRenderer) : void 
++setDimensions(int w,int h) : void
++startGame() : void 
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>360</y>
+      <w>84</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;820.0;70.0;820.0;70.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>594</y>
+      <w>132</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;200.0;120.0;200.0;360.0;160.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>828</x>
+      <y>528</y>
+      <w>258</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;10.0;10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>612</y>
+      <w>102</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;80.0;150.0;10.0;10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>1074</y>
+      <w>18</w>
+      <h>408</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;660.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>336</y>
+      <w>264</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;420.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>396</x>
+      <y>1404</y>
+      <w>18</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>444</x>
+      <y>1164</y>
+      <w>636</w>
+      <h>408</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;660.0;1040.0;660.0;1030.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>1290</y>
+      <w>168</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>SteelBrick
+--
++SteelBrick(LTexture*,Point)
++render(long int&amp;, SDL_Renderer*):void
+bg=yellow
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1320</x>
+      <y>1050</y>
+      <w>126</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+PADDLE_SIZES
+--
+SMALL
+MEDIUM
+LARGE
+NUM_PADDLE_SIZES</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>1428</y>
+      <w>84</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+BALL_MODE
+--
+NORMAL
+FIRE
+STICKY
+SPEED
+NUM_BALL_MODE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>1056</y>
+      <w>102</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>984</y>
+      <w>102</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1320</x>
+      <y>972</y>
+      <w>126</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+PADDLE_MODES
+--
+NORMAL
+FIRE
+TURTLE
+NUM_PADDLE_MODES</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>348</x>
+      <y>1404</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>666</x>
+      <y>618</y>
+      <w>984</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1620.0;110.0;1620.0;10.0;10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>1266</y>
+      <w>312</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;500.0;10.0;500.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1074</x>
+      <y>1182</y>
+      <w>216</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>Bullet
+bg=green
+--
+# spriteClips[2]:SDL_Rect
+# delay:int
+# bulletPosition:int
+# bulletPositionOffset:int
+# bulletFire:Mix_Chunk*
+#bulletPositions[NUM_BULLET_POSITIONS]:int
++ BULLET_POSITIONS:BULLET_POSITIONS
++ SMASH_STEPS:SMASH_STEPS
+--
++Bullet(LTexture*, Board*, Paddle*, int);
++virtual ~Bullet();
++ render(long int&amp;, SDL_Renderer*):void
++ setPosition(Point):void
++ activate(Point paddlePosition):void 
++ deactivate():void
++ initializePosition():void
++ move(List* = NULL):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1326</x>
+      <y>1134</y>
+      <w>222</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Missile
+bg=green
+--
+# spriteClips[NUM_MISSILE_SIZES + NUM_SMASH_STEPS]:SDL_Rect
+# state:int
++ MISSILE_SIZES:MISSILE_SIZES
++ MISSILE_STATES:MISSILE_STATES
++ SMASH_STEPS:SMASH_STEPS
+--
++ Missile(LTexture*, Point);
++ virtual ~Missile()
++ render(long int&amp;, SDL_Renderer*):void
++ setBounds():void
++ activate(Point paddlePosition):void
++ deactivate():void
++ smash():void 
++ move():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>1110</y>
+      <w>162</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0;250.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>1146</y>
+      <w>102</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0;150.0;180.0;100.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>1356</y>
+      <w>84</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+BULLET_POSITIONS
+--
+LEFT
+RIGHT
+NUM_BULLET_POSITIONS</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1416</x>
+      <y>1290</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+MISSILE_STATES
+--
+ACTIVE
+NOT_ACTIVE
+NUM_MISSILE_STATES</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1332</x>
+      <y>1290</y>
+      <w>72</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+MISSILE_SIZES
+--
+SMALL
+LARGE
+NUM_MISSILE_SIZES</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>942</x>
+      <y>942</y>
+      <w>570</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;&gt;
+</panel_attributes>
+    <additional_attributes>930.0;320.0;930.0;20.0;10.0;20.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1326</x>
+      <y>684</y>
+      <w>162</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>GameOverScreen
+bg=red
+enum Buttons {CONTINUE,QUIT,BUTTONSMAX};
+-
++resetGame : bool
++mainMenu : MainMenu*
++gameRun : bool
+-gameOverText : Text*
+-
++handleEvents(SDL_Event&amp; e) : void 
++render(SDL_Renderer* gRenderer) : void
++setDimensions(int _SCREEN_WIDTH,int _SCREEN_HEIGHT) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1140</x>
+      <y>690</y>
+      <w>162</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>PauseMenu
+bg=red
+    enum Buttons {RESUME,SAVE,QUIT,BUTTONSMAX};
+-
++mMenu : MainMenu* 
++saveState : LoadGameScreeen*
++resetGame : bool 
++gameRun : bool 
+-heading : Text* 
+-game : Game*
+-
++handleEvents(SDL_Event&amp; e) : void 
++render(SDL_Renderer*) : void 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>726</y>
+      <w>72</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;180.0;80.0;180.0;80.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>582</y>
+      <w>636</w>
+      <h>246</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;390.0;60.0;390.0;60.0;50.0;1040.0;50.0;1040.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>312</x>
+      <y>84</y>
+      <w>222</w>
+      <h>516</h>
+    </coordinates>
+    <panel_attributes>Game
+-
+- gameBoard:Board*
+- gWindow:SDL_Window*
+- gRenderer:SDL_Renderer*
+- mainMenu: MainMenu*
+- gameGUI:GUI*
+- splashScreen:Screen*
+- pauseMenu:PauseMenu*
+- loadState: LoadGameScreen*
+- gameOver:GameOver*
+- levelComplete:GameCompleteScreen*
+- Menus:vector
+- Screens:vector
+- levelNum: int
+- pad:Paddle*
+- ball:Ball*
+- SCREEN_WIDTH:const int = 1024
+- SCREEN_HEIGHT:const int = 768
+- lives:int = 5
+- score:int
+- firstTick:Uint32
+- playerEnt:List
+- worldEnt:List
+- gSpriteSheetTexture:LTexture
+- mainMenuTexture: LTexture* 
+- pauseMenuTexture: LTexture*
+- bgTexture: LTexture
+- gameOverScreen: GameOverScreen*
+- mainDay: Mix_Music*
+- mainNight:Mix_Music*
+- menuMus:Mix_Music*
+- splashSound:Mix_Chunk*
+- ballBrick:Mix_Chunk*
+- ballPadBoard:Mix_Chunk*
+- poweringUP:Mix_Chunk*
+- death:Mix_Chunk*
+- levComplete:Mix_Chunk*
+- levFail:Mix_Chunk*
+- bulletFire:Mix_Chunk*
+- selectSound:Mix_Chunk*
+--
++ init():bool
++ loadMedia():bool
++ gameLoop():void
++ close():bool
++ handleEvents(SDL_Event&amp;,bool&amp;,bool&amp;,bool&amp;,bool&amp;):void
++ collisionHandler(Entity*,Entity*):void
++ collisionHandler(List*, List*):void
++ collisionHandler(Entity*,List*):void
++ collisionHandler(List*):void
++ levelLoader(string=""):void
++ stateSaver(string=""):void
++ stateLoader(string=""):void
++ getGameBall():Ball*
++ getGamePad():Paddle*
++ getPlayerEnt():List*
++ getWorldEnt():List*
++ getGameGUI():GUI*
++ getLives():int
++ setLives(int):void
++ getScore():int
++ setScore(int):void
++ getFirstTick:Uint32
++ setFirstTick(Uint32):void
++ getLevelNum():int
++ setLevelNum(int):void
++ getNumBalls():int
++ setNumBalls(int):void
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>636</x>
+      <y>1518</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>1494</y>
+      <w>84</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+POWER_TYPE
+--
+RESTORE_PAD
+ELONGATE
+SHORTEN
+TURTLE
+BULLET
+MISSILE
+RESTORE_BALL
+SPEEDBALL
+FIREBALL
+STICKYBALL
+MULTIBALL
+EXTRA_LIFE
+NUM_POWERUPS</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>102</x>
+      <y>1548</y>
+      <w>144</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>162</x>
+      <y>750</y>
+      <w>84</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+BALL_MODE
+--
+NORMAL
+FIRE
+STICKY
+SPEED
+NUM_BALL_MODE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>780</y>
+      <w>78</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>1662</y>
+      <w>162</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>BossBrick
+--
++ThreeHitBrick(LTexture*,Board*, Point)
++render(long int&amp;, SDL_Renderer*):void
++ move(List*):void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>438</x>
+      <y>1464</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>438</x>
+      <y>1464</y>
+      <w>18</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1128</x>
+      <y>1422</y>
+      <w>216</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ResistantBullet
+bg=green
+--
+# smashes:Point*
+# numSmashes:int
+# delays:int*
+# expFrames:int*
+--
++ResitantBullet(LTexture*, Board*, Paddle*, int);
++virtual ~ResistantBullet();
++ render(long int&amp;, SDL_Renderer*):void
++ addSmashLocarion():void
++ takeCollisionAction(int):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1266</x>
+      <y>1314</y>
+      <w>18</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>582</x>
+      <y>1590</y>
+      <w>162</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>MobileBrickX
+--
++ MobileBrickX(LTexture*,Board*,Point)
++ move(List*):void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>798</x>
+      <y>1590</y>
+      <w>162</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>MobileBrickY
+--
++ MobileBrickY(LTexture*,Board*,Point)
++ move(List*):void
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>678</x>
+      <y>1542</y>
+      <w>90</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;130.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>1566</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>1614</y>
+      <w>90</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;130.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>1614</y>
+      <w>90</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;130.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1074</x>
+      <y>456</y>
+      <w>162</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>Menu
+bg=red
+-
+#buttons : vector &lt;Button&gt; 
+#option : int
+#SCREEN_HEIGHT : int
+#SCREEN_WIDTH : int
+#MAXBUTTONS:int 
+#menuSprite:SDL_Rect 
+#selectSound : Mix_Chunk* 
+-
+/+render(SDL_Renderer* gRenderer): void/
+/+setDimensions(int,int): void/
+/+handleEvents(SDL_Event&amp; e): void/
+/+startGame():void/
++getOption(): void ;
++setOption(int opt) : void;
++outputRect: SDL_Rect
++menuMus: Mix_Music*
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>540</y>
+      <w>498</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>810.0;10.0;10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1158</x>
+      <y>582</y>
+      <w>18</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1182</x>
+      <y>582</y>
+      <w>186</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;290.0;120.0;290.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1206</x>
+      <y>582</y>
+      <w>366</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;590.0;100.0;590.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>696</y>
+      <w>162</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>LoadGameScreen
+bg=red
+--
++parentMenu : Menu* 
++heading : Text* 
+-game : Game* 
+-mode : int 
+    enum Buttons {STATE1,STATE2,STATE3,CANCEL,BUTTONSMAX};
+
+    enum modes {SAVE,LOAD} : modes
+-
++handleEvents(SDL_Event&amp; e) : void
++setMode(int Mode) : void
++render(SDL_Renderer*) : void
++setGame(Game*) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>756</y>
+      <w>318</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;40.0;510.0;40.0;510.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1674</x>
+      <y>684</y>
+      <w>162</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>GameCompleteScreen
+bg=red
+-
++proceed = -1 : int
++mainMenu : Menu* 
++auxtexture : SDL_Texture* 
++resetGame : bool
+-levComplete : Mix_Chunk* 
+-levStart : Mix_Chunk* 
+-Text* heading : Text* 
+-Text* scoreHeading : Text* 
+-Text* scoreText : Text* 
+-Text* bonusScore : Text* 
+-totalScore : Text* 
+-
++enum Buttons{NEXT,QUIT,BUTTONSMAX};
++render(SDL_Renderer* gRenderer) : void
++handleEvents(SDL_Event&amp; e) : void
++setDimensions(int SCREEN_WIDTH,int SCREEN_HEIGHT) : void
++setScore(int Score) : void
++setBonus(int Score) : void
++setTotalScore(int Score) : void
++getScoreStr(int Score,string scoretype) : string </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1218</x>
+      <y>582</y>
+      <w>564</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;920.0;90.0;920.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1326</x>
+      <y>414</y>
+      <w>162</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>Screens
+bg=red
+-
++mainMenu : MainMenu*
++nextScreen : Screen*
++long int frames = 0;
+-screenTexture : LTexture* 
+-SCREEN_WIDTH : int 
+-SCREEN_HEIGHT : int
+-show : bool
+-hide : bool
+-stay : bool
+-alive : bool
+-splTick : Uint32 
+-imageRect : SDL_Rect
+-outputRect : SDL_Rect 
+-delay : unsigned int
+-
++ScreenIn(long int frame,SDL_Renderer* gRenderer) : bool
++ScreenOut(long int frame,SDL_Renderer* gRenderer) : bool
++ScreenStay(SDL_Renderer* gRenderer) : void 
++render(SDL_Renderer* gRenderer) : void
++getAlive() : bool
++setAlive(bool isAlive) : void
++setDimensions(int width,int height) : void
++setDelay(int timeDelay) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>594</y>
+      <w>858</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;1410.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>138</y>
+      <w>810</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;1250.0;10.0;1250.0;580.0;1330.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1746</x>
+      <y>858</y>
+      <w>54</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Buttons
+--
+NEXT
+QUIT
+BUTTONSMAX</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>852</y>
+      <w>66</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Buttons
+--
+STATE1
+STATE2
+STATE3
+CANCEL
+BUTTONSMAX</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1230</x>
+      <y>846</y>
+      <w>60</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Buttons
+--
+RESUME
+SAVE
+QUIT
+BUTTONSMAX
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1344</x>
+      <y>852</y>
+      <w>54</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Buttons
+--
+CONTINUE
+QUIT
+BUTTONSMAX</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1590</x>
+      <y>846</y>
+      <w>66</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Buttons
+--
+PLAY
+LOAD
+CREDITS
+QUIT
+BUTTONSMAX</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1068</x>
+      <y>852</y>
+      <w>36</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+modes
+--
+SAVE
+LOAD</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>828</y>
+      <w>66</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;90.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>828</y>
+      <w>24</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>20.0;10.0;20.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1098</x>
+      <y>828</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>20.0;10.0;20.0;100.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1392</x>
+      <y>822</y>
+      <w>48</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1560</x>
+      <y>816</y>
+      <w>42</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;50.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1710</x>
+      <y>846</y>
+      <w>48</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;60.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1062</x>
+      <y>582</y>
+      <w>84</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;120.0;10.0;120.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1470</x>
+      <y>384</y>
+      <w>48</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>30.0;80.0;60.0;80.0;60.0;10.0;10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1482</x>
+      <y>576</y>
+      <w>114</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>170.0;180.0;170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>504</y>
+      <w>498</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;500.0;170.0;500.0;170.0;280.0;730.0;280.0;730.0;10.0;810.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>738</x>
+      <y>642</y>
+      <w>996</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1640.0;70.0;1640.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>738</x>
+      <y>642</y>
+      <w>696</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1140.0;70.0;1140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>726</x>
+      <y>624</y>
+      <w>456</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>740.0;110.0;740.0;10.0;10.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>738</x>
+      <y>762</y>
+      <w>234</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>370.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>732</x>
+      <y>1422</y>
+      <w>162</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Invisible 
+--
+bg=yellow
++InvisibleBrick(LTexture*,Board*,Point)
++render(SDL_Renderer*) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>1434</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>966</x>
+      <y>1116</y>
+      <w>120</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0;180.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>786</x>
+      <y>846</y>
+      <w>924</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;160.0;1520.0;160.0;1520.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>762</x>
+      <y>1002</y>
+      <w>222</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Smasher
+bg=green
+--
++/render(SDL_Renderer*) : void/
++enum SMASHER_TYPES{NORMAL,RESISTANT,NUM_SMASHER_TYPES};
++/move(List* = NULL) : void/
+--
+#SDL_Rect expSpriteClips[NUM_EXPLODING_FRAMES];
+#smashed : bool
+#finished : bool
+#gameBoard : Board* 
+#offsetX : int
+#offsetY : int
+#paddle : Paddle*
+#delay : int 
+#boardBounds : SDL_Rect 
+#soundExplode : Mix_Chunk*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>876</x>
+      <y>1152</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+EXPLODING_FRAMES 
+--
+START
+POWERUP1
+POWERUP2
+BLOW
+POWERDOWN1
+POWERDOWN2
+FINISH
+NUM_EXPLODING_FRAMES
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>1152</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+SMASHER_TYPES
+-
+NORMAL
+RESISTANT
+NUM_SMASHER_TYPES
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>1008</y>
+      <w>252</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>408</y>
+      <w>120</w>
+      <h>606</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0;180.0;990.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>198</y>
+      <w>588</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>960.0;220.0;960.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>594</y>
+      <w>18</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1122</x>
+      <y>1314</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>1248</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1446</x>
+      <y>1248</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>906</x>
+      <y>1116</y>
+      <w>18</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>834</x>
+      <y>1116</y>
+      <w>18</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>1164</w>
+      <h>1194</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>450.0;1970.0;10.0;1970.0;20.0;30.0;1920.0;10.0;1920.0;550.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1206</x>
+      <y>342</y>
+      <w>732</w>
+      <h>630</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;1030.0;10.0;970.0;1200.0;990.0;1200.0;10.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1266</x>
+      <y>918</y>
+      <w>18</w>
+      <h>276</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;440.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1266</x>
+      <y>1128</y>
+      <w>72</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>918</y>
+      <w>654</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;290.0;10.0;10.0;1070.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>1248</y>
+      <w>1014</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;20.0;10.0;280.0;1670.0;290.0;1660.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>714</x>
+      <y>1134</y>
+      <w>72</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+COLORS 
+--
+PURPLE
+RED
+YELLOW
+TURQ
+GRAY
+GREEN
+NUM_BRICK_COLORS}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>1020</y>
+      <w>84</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+BRICK_FRAMES
+--
+INTACT
+SLIGHTCRACK
+HEAVCRACK
+EXP1
+EXP2
+NUM_BRICK_FRAMES</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>1044</y>
+      <w>54</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>1206</y>
+      <w>66</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;90.0;50.0;90.0;10.0</additional_attributes>
+  </element>
+</diagram>
