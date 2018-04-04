@@ -1568,3 +1568,304 @@
 1512401860 source:d:\osama's stuff\sem 3\object oriented programming\oop project stuff\game - final\game\twohitbrick.cpp
 	"TwoHitBrick.h"
 
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\ball.cpp
+	"Ball.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\ball.h
+	"Entity.h"
+	<math.h>
+	"Board.h"
+	<SDL_mixer.h>
+	"Paddle.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\entity.h
+	"Point.h"
+	"LTexture.h"
+	"time.h"
+	<SDL_mixer.h>
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\point.h
+	<iostream>
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\ltexture.h
+	<iostream>
+	<stdio.h>
+	<SDL.h>
+	<SDL_image.h>
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\board.h
+	"Entity.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\paddle.h
+	"Entity.h"
+	"Board.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\board.cpp
+	"Board.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\bossbrick.cpp
+	"BossBrick.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\bossbrick.h
+	"MobileBrickX.h"
+	"MobileBrickY.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\mobilebrickx.h
+	"MobileBrick.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\mobilebrick.h
+	"OneHitBrick.h"
+	"List.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\onehitbrick.h
+	"Brick.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\brick.h
+	"Entity.h"
+	"Board.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\list.h
+	"Node.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\node.h
+	"Entity.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\mobilebricky.h
+	"MobileBrick.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\brick.cpp
+	"Brick.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\bullet.cpp
+	"Bullet.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\bullet.h
+	"Smasher.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\smasher.h
+	"Entity.h"
+	"Paddle.h"
+	"Board.h"
+	<SDL_mixer.h>
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\button.cpp
+	"Button.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\button.h
+	<map>
+	"Entity.h"
+	"Text.h"
+	"SDL.h"
+
+1522844598 c:\users\ahsan ahmed\documents\github\compendium-for-games\text.h
+	<map>
+	"Entity.h"
+	"SDL.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\entity.cpp
+	"Entity.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\fileio.cpp
+	"FileIO.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\fileio.h
+	<iostream>
+	<fstream>
+	"Game.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\game.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<stdio.h>
+	<string>
+	<sstream>
+	<cstdlib>
+	<time.h>
+	<fstream>
+	<sstream>
+	"LTexture.h"
+	"Board.h"
+	"FileIO.h"
+	"OneHitBrick.h"
+	"TwoHitBrick.h"
+	"ThreeHitBrick.h"
+	"SteelBrick.h"
+	"MobileBrickX.h"
+	"MobileBrickY.h"
+	"InvisibleBrick.h"
+	"BossBrick.h"
+	"Point.h"
+	"List.h"
+	"Paddle.h"
+	"MainMenu.h"
+	"Ball.h"
+	"Bullet.h"
+	"ResistantBullet.h"
+	"Missile.h"
+	"PowerUp.h"
+	"GUI.h"
+	"PauseMenu.h"
+	"LoadGameScreen.h"
+	"Screens.h"
+	"GameOver.h"
+	"GameCompleteScreen.h"
+
+1522844598 c:\users\ahsan ahmed\documents\github\compendium-for-games\twohitbrick.h
+	"Brick.h"
+
+1522844598 c:\users\ahsan ahmed\documents\github\compendium-for-games\threehitbrick.h
+	"Brick.h"
+
+1522844598 c:\users\ahsan ahmed\documents\github\compendium-for-games\steelbrick.h
+	"Brick.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\invisiblebrick.h
+	"TwoHitBrick.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\mainmenu.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<vector>
+	"Menu.h"
+	"Button.h"
+	"LoadGameScreen.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\menu.h
+	"Entity.h"
+	"Button.h"
+	<vector>
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\loadgamescreen.h
+	"Menu.h"
+	<vector>
+	"Button.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\resistantbullet.h
+	"Bullet.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\missile.h
+	"Smasher.h"
+	"List.h"
+	<math.h>
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\powerup.h
+	"Entity.h"
+	"Board.h"
+	"Paddle.h"
+	"Ball.h"
+	<SDL.h>
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\gui.h
+	"Entity.h"
+	"Text.h"
+	<string>
+	<sstream>
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\pausemenu.h
+	<vector>
+	"Point.h"
+	"Button.h"
+	"LTexture.h"
+	"LoadGameScreen.h"
+	"MainMenu.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\screens.h
+	"LTexture.h"
+	"MainMenu.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\gameover.h
+	"Menu.h"
+	"Button.h"
+	"LTexture.h"
+	"MainMenu.h"
+
+1522844595 c:\users\ahsan ahmed\documents\github\compendium-for-games\gamecompletescreen.h
+	"SDL.h"
+	"SDL_image.h"
+	"Menu.h"
+	"Text.h"
+	<sstream>
+	<cstdlib>
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\game.cpp
+	"Game.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\gamecompletescreen.cpp
+	"GameCompleteScreen.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\gameover.cpp
+	"GameOver.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\gui.cpp
+	"GUI.h"
+	<SDL.h>
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\invisiblebrick.cpp
+	"InvisibleBrick.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\list.cpp
+	"List.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\loadgamescreen.cpp
+	"LoadGameScreen.h"
+	"Game.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\ltexture.cpp
+	"LTexture.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\mainmenu.cpp
+	"MainMenu.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\menu.cpp
+	"Menu.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\missile.cpp
+	"Missile.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\mobilebrick.cpp
+	"MobileBrick.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\mobilebrickx.cpp
+	"MobileBrickX.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\mobilebricky.cpp
+	"MobileBrickY.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\onehitbrick.cpp
+	"OneHitBrick.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\paddle.cpp
+	"Paddle.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\pausemenu.cpp
+	"PauseMenu.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\point.cpp
+	"Point.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\powerup.cpp
+	"PowerUp.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\resistantbullet.cpp
+	"ResistantBullet.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\screens.cpp
+	"Screens.h"
+
+1522844595 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\smasher.cpp
+	"Smasher.h"
+
+1522844598 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\steelbrick.cpp
+	"SteelBrick.h"
+
+1522844598 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\text.cpp
+	"Text.h"
+
+1522844598 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\threehitbrick.cpp
+	"ThreeHitBrick.h"
+
+1522844598 source:c:\users\ahsan ahmed\documents\github\compendium-for-games\twohitbrick.cpp
+	"TwoHitBrick.h"
+
