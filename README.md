@@ -8,4 +8,4 @@ A SEGA type compendium where people can play game of their choice.
 - Mainly for the University projects, ie if a student create a game as a part of some course, they can add it to this compandium.
 
 ## Update
-Haven't started the work yet. Will work on it after exams.
+Haven't started the work yet. Trying to find motivation.
