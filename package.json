@@ -1,0 +1,24 @@
+{
+  "name": "compendium-for-games",
+  "version": "1.0.0",
+  "description": "A Sega type compendium for games that were/are made by students. ",
+  "main": "main.js",
+  "scripts": {
+    "test": "Electron  ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhsanSN/Compendium-for-Games.git"
+  },
+  "keywords": [
+    "Compendium",
+    "games",
+    "sega"
+  ],
+  "author": "Syed Ahsan Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AhsanSN/Compendium-for-Games/issues"
+  },
+  "homepage": "https://github.com/AhsanSN/Compendium-for-Games#readme"
+}
