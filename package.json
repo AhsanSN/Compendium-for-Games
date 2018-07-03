@@ -4,7 +4,8 @@
   "description": "A Sega type compendium for games that were/are made by students. ",
   "main": "main.js",
   "scripts": {
-    "start": "Electron  ."
+    "start": "Electron  .",
+    "package": "electron-packager . compendium-for-games --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Game Compendium\""
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,25 @@
     "sega"
   ],
   "author": "Syed Ahsan Ahmed",
+  "co-author" : "Minhaj Ahmed Moin",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AhsanSN/Compendium-for-Games/issues"
+<<<<<<< HEAD
+<<<<<<< HEAD
+  "dependencies": {
+    "electron": "^2.0.3"
+=======
+=======
+>>>>>>> 1b334a7dbb1ad3665dc7aaeb7d5fe8d2807fe948
+  "devDependencies": {
+    "electron": "^2.0.0"
   },
-  "homepage": "https://github.com/AhsanSN/Compendium-for-Games#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-validator": "^5.2.0",
+    "uuid": "^3.2.1"
+<<<<<<< HEAD
+>>>>>>> 1b334a7dbb1ad3665dc7aaeb7d5fe8d2807fe948
+=======
+>>>>>>> 1b334a7dbb1ad3665dc7aaeb7d5fe8d2807fe948
+  }
 }
