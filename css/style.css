@@ -1,5 +1,5 @@
 body {
-    background: #593b63;
+    background: #f1c40f;
 }
 
 .button {
@@ -14,7 +14,7 @@ body {
 }
 
 .allbuttons {
-    padding: 30%;
+    padding: 30vh;
 }
 
     .button p {
