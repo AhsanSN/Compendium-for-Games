@@ -10,19 +10,17 @@ const app1 = express();
 const { app, BrowserWindow } = electron;
 let mainWindow;
 
-console.log("WDa");
+// app1.use(express.json());
+// app1.use(express.urlencoded({extended: true}));
 
-app1.use(express.json());
-app1.use(express.urlencoded({extended: true}));
+// app1.use(express.static(__dirname + '/public'));
 
-app1.use(express.static(__dirname + '/public'));
-
-app1.use((err, req, res, next) => {
-  res.status(500)
-  .json({
-    "error": err
-  });
-});
+// app1.use((err, req, res, next) => {
+//   res.status(500)
+//   .json({
+//     "error": err
+//   });
+// });
 
 // Express Stuff
 
@@ -47,7 +45,6 @@ function showWindow() {
 }
 
 app.on('ready', function () {
-
     showWindow();
 });
 

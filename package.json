@@ -4,7 +4,8 @@
   "description": "A Sega type compendium for games that were/are made by students. ",
   "main": "main.js",
   "scripts": {
-    "start": "Electron  ."
+    "start": "Electron  .",
+    "package": "electron-packager . compendium-for-games --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Game Compendium\""
   },
   "repository": {
     "type": "git",
