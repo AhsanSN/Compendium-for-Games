@@ -1,5 +1,5 @@
 body {
-    background: #f1c40f;
+    background: #593b63;
 }
 
 .button {
@@ -11,6 +11,10 @@ body {
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     border-radius: 3px;
+}
+
+.allbuttons {
+    padding: 30%;
 }
 
     .button p {
@@ -36,3 +40,8 @@ body {
         opacity: 0.4;
         bottom: -30px;
     }
+
+a {
+    color: blue;
+    text-decoration: none; /* no underline */
+}
