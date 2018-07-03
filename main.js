@@ -38,6 +38,12 @@ function showWindow() {
     mainWindow.setTitle("Meme Viewer");
     mainWindow.setSize(800, 600, 1);
     mainWindow.setResizable(false)
+
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, '/pages/home.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
 }
 
 app.on('ready', function () {
