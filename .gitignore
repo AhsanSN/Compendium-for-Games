@@ -24,6 +24,7 @@ coverage
 .grunt
 .vs
 
+
 # Bower dependency directory (https://bower.io/)
 bower_components
 
@@ -39,6 +40,8 @@ jspm_packages/
 
 # vs directory
 .vs/
+
+.vs\
 
 # TypeScript v1 declaration files
 typings/

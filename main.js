@@ -27,5 +27,6 @@ function showWindow() {
 app.on('ready', function () {
     showWindow();
     db.createTable();
+    db.insert();
 });
 
