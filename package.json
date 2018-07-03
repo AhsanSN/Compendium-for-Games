@@ -19,23 +19,9 @@
   "author": "Syed Ahsan Ahmed",
   "co-author" : "Minhaj Ahmed Moin",
   "license": "MIT",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "dependencies": {
-    "electron": "^2.0.3"
-=======
-=======
->>>>>>> 1b334a7dbb1ad3665dc7aaeb7d5fe8d2807fe948
-  "devDependencies": {
-    "electron": "^2.0.0"
-  },
   "dependencies": {
     "express": "^4.16.3",
     "express-validator": "^5.2.0",
     "uuid": "^3.2.1"
-<<<<<<< HEAD
->>>>>>> 1b334a7dbb1ad3665dc7aaeb7d5fe8d2807fe948
-=======
->>>>>>> 1b334a7dbb1ad3665dc7aaeb7d5fe8d2807fe948
   }
 }

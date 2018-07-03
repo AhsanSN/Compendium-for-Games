@@ -33,7 +33,7 @@ function showWindow() {
 
     mainWindow = new BrowserWindow({})
     mainWindow.setMenu(null);
-    mainWindow.setTitle("Meme Viewer");
+    mainWindow.setTitle("HU - Compandium for games");
     mainWindow.setSize(800, 600, 1);
     mainWindow.setResizable(false)
 
