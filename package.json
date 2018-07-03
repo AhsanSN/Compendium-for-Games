@@ -4,7 +4,7 @@
   "description": "A Sega type compendium for games that were/are made by students. ",
   "main": "main.js",
   "scripts": {
-    "test": "Electron  ."
+    "start": "Electron  ."
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,5 @@
   "bugs": {
     "url": "https://github.com/AhsanSN/Compendium-for-Games/issues"
   },
-  "homepage": "https://github.com/AhsanSN/Compendium-for-Games#readme"
+  "homepage": "https://github.com/AhsanSN/Compendium-for-Games#readme",
 }
