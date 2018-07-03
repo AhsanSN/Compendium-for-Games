@@ -3,7 +3,7 @@ const url = require('url')
 const path = require('path')
 const fs = require('fs');
 const express = require('express');
-const request = require('request');
+// const request = require('request');
 var stream = fs.createWriteStream("imagesFile.txt", { flags: 'a' });
 const app1 = express();
 

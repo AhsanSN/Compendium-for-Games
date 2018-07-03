@@ -17,6 +17,7 @@
     "sega"
   ],
   "author": "Syed Ahsan Ahmed",
+  "co-author" : "Minhaj Ahmed Moin",
   "license": "MIT",
   "devDependencies": {
     "electron": "^2.0.0"
