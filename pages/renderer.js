@@ -6,7 +6,6 @@ table.appendChild(li);
 
 table.addEventListener('click', function(){
     ipc.on('actionReply', function(event, response){
-        console.log("HTMLWala");
         console.log(response);
     })
     ipc.send('invokeAction', 'someData');
