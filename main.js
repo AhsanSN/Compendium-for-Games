@@ -8,6 +8,13 @@ const db = require('./database.js')
 const { app, BrowserWindow } = electron;
 let mainWindow;
 
+var ipc = require('electron').ipcMain;
+
+ipc.on('invokeAction', function(event, data){
+    console.log(data);
+    event.sender.send('actionReply', "Lmao");
+});
+
 
 function showWindow() {
 

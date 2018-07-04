@@ -17,143 +17,143 @@ body {
     padding: 30vh;
 }
 
-    .button p {
-        font-family: "Roboto";
-        text-align: center;
-        text-transform: uppercase;
-        color: #FFF;
-        user-select: none;
-    }
+.button p {
+	font-family: "Roboto";
+	text-align: center;
+	text-transform: uppercase;
+	color: #FFF;
+	user-select: none;
+}
 
-    .button:hover {
-        cursor: pointer;
-    }
+.button:hover {
+	cursor: pointer;	
+}
 
-    .button:after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 10%;
-        border-radius: 50%;
-        background-color: #927608;
-        opacity: 0.4;
-        bottom: -30px;
-    }
+.button:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	border-radius: 50%;
+	background-color: #927608;
+	opacity: 0.4;
+	bottom: -30px;
+}
 
 a {
-    color: white;
-    text-decoration: none; /* no underline */
+	color: white;
+	text-decoration: none; /* no underline */
 }
 
 
 /**
-    for viewgames.html
+for viewgames.html
 */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html, body {
-    background: #f1c40f;
-    font-size: 1.1rem;
-    font-family: 'Quicksand', sans-serif;
-    height: 100%;
+	background: #f1c40f;
+	font-size: 1.1rem;
+	font-family: 'Quicksand', sans-serif;
+	height: 100%;
 }
 
 @keyframes strikeitem {
-    to {
-        width: calc(100% + 1rem);
-    }
+	to {
+		width: calc(100% + 1rem);
+	}
 }
 
 #todolist {
-    padding: 2rem 3rem 3rem;
-    background: #FF6666;
-    color: #FFF;
-    box-shadow: -20px -20px 0px 0px rgba(100,100,100,.1);
-    height: 100%;
+	background: #FF6666;
+	color: #FFF;
+	padding: 2rem 3rem 3rem;
+	box-shadow: -20px -20px 0px 0px rgba(100,100,100,.1);
+	height: 100%;
 }
 
-    #todolist h1 {
-        /*text-align:center;*/
-        font-weight: normal;
-        font-size: 1.6rem;
-        letter-spacing: 0.05em;
-        border-bottom: 1px solid rgba(255,255,255,.3);
-    }
+#todolist h1 {
+/*text-align:center;*/
+	font-weight: normal;
+	font-size: 1.6rem;
+	letter-spacing: 0.05em;
+	border-bottom: 1px solid rgba(255,255,255,.3);
+}
 
-        #todolist h1 span {
-            display: block;
-            font-size: 0.8rem;
-            margin-bottom: 0.7rem;
-            margin-left: 3px;
-            margin-top: 0.2rem;
-        }
+#todolist h1 span {
+	display: block;
+	font-size: 0.8rem;
+	margin-bottom: 0.7rem;
+	margin-left: 3px;
+	margin-top: 0.2rem;
+}
 
-    #todolist .emptylist {
-        margin-top: 2.6rem;
-        text-align: center;
-        letter-spacing: .05em;
-        font-style: italic;
-        opacity: 0.8;
-    }
+#todolist .emptylist {
+	margin-top: 2.6rem;
+	text-align: center;
+	letter-spacing: .05em;
+	font-style: italic;
+	opacity: 0.8;
+}
 
-    #todolist ul {
-        margin-top: 2.6rem;
-        list-style: none;
-    }
+#todolist ul {
+	margin-top: 2.6rem;
+	list-style: none;
+}
 
-    #todolist .todolist-move {
-        transition: transform 1s;
-    }
+#todolist .todolist-move {
+	transition: transform 1s;
+}
 
-    #todolist li {
-        display: flex;
-        margin: 0 -3rem 4px;
-        padding: 1.1rem 3rem;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(255,255,255,0.1);
-    }
+#todolist li {
+	display: flex;
+	margin: 0 -3rem 4px;
+	padding: 1.1rem 3rem;
+	justify-content: space-between;
+	align-items: center;
+	background: rgba(255,255,255,0.1);
+}
 
-    #todolist .actions {
-        flex-shrink: 0;
-        padding-left: 0.7em;
-    }
+#todolist .actions {
+	flex-shrink: 0;
+	padding-left: 0.7em;
+}
 
-    #todolist .label {
-        position: relative;
-        transition: opacity .2s linear;
-    }
+#todolist .label {
+	position: relative;
+	transition: opacity .2s linear;
+}
 
-    #todolist .done .label {
-        opacity: .6;
-    }
+#todolist .done .label {
+	opacity: .6;
+}
 
-        #todolist .done .label:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -.5rem;
-            display: block;
-            width: 0%;
-            height: 1px;
-            background: #FFF;
-            animation: strikeitem .3s ease-out 0s forwards;
-        }
+#todolist .done .label:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: -.5rem;
+	display: block;
+	width: 0%;
+	height: 1px;
+	background: #FFF;
+	animation: strikeitem .3s ease-out 0s forwards;
+}
 
-    #todolist .btn-picto {
-        border: none;
-        background: none;
-        -webkit-appearance: none;
-        cursor: pointer;
-        color: #FFF;
-    }
+#todolist .btn-picto {
+	border: none;
+	background: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+	color: #FFF;
+}
 
 .aboutgame {
-    font-size: 0.7rem;
+	font-size: 0.7rem;
 }
