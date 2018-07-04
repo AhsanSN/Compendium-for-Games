@@ -28,5 +28,6 @@ app.on('ready', function () {
     showWindow();
     db.createTable();
     db.insert();
+    db.getRows()
 });
 
