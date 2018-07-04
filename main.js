@@ -11,10 +11,29 @@ let mainWindow;
 var ipc = require('electron').ipcMain;
 
 ipc.on('invokeAction', function(event, data){
+    
     console.log(data);
     event.sender.send('actionReply', "Lmao");
+    console.log("ADWA");
 });
 
+function readFile()
+{
+
+    var games;
+    fs.readFile('gameList.txt', function (error, data) {
+        if (!error)
+        {
+            games = data.toString().split("\n");
+            noOfGames = games.length;
+            ipc.on('gamelistSent',function(event,arg)
+            {
+                event.sender.send(games);
+            });
+        }
+    });
+
+}
 
 function showWindow() {
 
@@ -35,5 +54,6 @@ app.on('ready', function () {
     showWindow();
     db.createTable();
     db.insert();
+    readFile();
 });
 
