@@ -25,11 +25,13 @@ function insert() {
 }
 
 function getRows() {
-    db.getAll('games', (succ, data));
-    // {
-    //     // succ - boolean, tells if the call is successful
-    //     // data - array of objects that represents the rows.
-    // }
+    db.getAll('games', (succ, data) => {
+        console.log(succ)
+        console.log(data)
+    }) 
+        // succ - boolean, tells if the call is successful
+    // data - array of objects that represents the rows.
+    
 }
 
 function getParticRow() {
