@@ -54,10 +54,6 @@ app.on('ready', function () {
     showWindow();
     db.createTable();
     db.insert();
-<<<<<<< HEAD
-    readFile();
-=======
     db.getRows()
->>>>>>> 8d43c488a0f7e95a6ca296fb6236d4e442ba4101
 });
 
