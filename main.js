@@ -9,7 +9,7 @@ let mainWindow;
 function showWindow() {
 
     mainWindow = new BrowserWindow({})
-    // mainWindow.setMenu(null);
+    mainWindow.setMenu(null);
     mainWindow.setTitle("HU - Compendium for games");
     mainWindow.setSize(800, 600, 1);
     mainWindow.setResizable(true)
@@ -38,7 +38,7 @@ function openDialog() {
     const dialog = require('electron').dialog;
     exeFile = (dialog.showOpenDialog({
         title: 'Select Game Exe (.exe)', filters: [
-            { name: 'Executable (.exe)', extensions: ['exe'] },
+            { name: 'Game Executable (.exe)', extensions: ['exe'] },
         ], properties: ['openFile']
     }));
     return exeFile;

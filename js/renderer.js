@@ -22,6 +22,7 @@ function dbData_callback(){
                 span1.appendChild(document.createTextNode(ArrNames[i]));
                 span1.className = "label";
                 span2.className = "aboutgame";
+                a.href = "javascript: void(0)";
                 // a.onclick = ()=>{console.log(d);};
                 span2.appendChild(document.createTextNode(ArrAbout[i]));
                 li.appendChild(span1);
