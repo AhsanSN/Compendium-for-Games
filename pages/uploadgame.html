@@ -23,9 +23,15 @@
 </div>
 </body>
 <script>
-    function openDialog() {
-        
+    //using ipc to openwindow
+    const electron = require('electron');
+    const { ipcRenderer } = require('electron');
 
+    ipcRenderer.on('asynchronous-reply', (event, arg) => {
+        console.log(arg) // prints "pong
+    }
+    function openDialog() {
+        ipcRenderer.send('asynchronous-message', 'ping');
     }
 </script>
 </html>
