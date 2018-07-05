@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const db = require('../database.js')
 
 function dbData_callback(){
