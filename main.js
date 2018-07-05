@@ -9,11 +9,11 @@ let mainWindow;
 function showWindow() {
 
     mainWindow = new BrowserWindow({})
-    mainWindow.setMenu(null);
+    // mainWindow.setMenu(null);
     mainWindow.setTitle("HU - Compendium for games");
     mainWindow.setSize(800, 600, 1);
     mainWindow.setResizable(true)
-    mainWindow.toggleDevTools();
+    // mainWindow.toggleDevTools();
 
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, '/pages/home.html'),
