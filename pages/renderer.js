@@ -1,21 +1,31 @@
-var ipc = require('electron').ipcRenderer;
-var table = document.getElementById('todolist');
-var li = document.createElement("li");
-li.appendChild(document.createTextNode("AKHTUNBINSK"));
-table.appendChild(li);
+const db = require('../database.js')
 
-table.addEventListener('click', function(event){
-    ipc.send('invokeAction', "event");
-    console.log("WAD");
-    ipc.on('actionReply', function(event, response){
-        console.log("Chu");
-    })
-});
+function dbData_callback(){
+    //get data from db
+    var imgArray = db.getRows(function (err, data) {
+        if (err) {
+            console.log("ERROR : ", err);
+        } else {
+            var ArrNames = db.getArrayGName(data)
+            var ArrAbout = db.getArrayGAbout(data)
+            var ArrExe = db.getArrayGExe(data)
+
+            //appending to gamelist display
+            var table = document.getElementById('todolist');
+
+			for (var i = 0; i < ArrNames.length; i++) {
+				var li = document.createElement("li");
+				li.appendChild(document.createTextNode(ArrNames[i]));
+				//make this small
+				li.appendChild(document.createTextNode(ArrAbout[i]));
+				table.appendChild(li);
+			}
+        }
+    }); 
+}
+
+dbData_callback();
 
 
 
-ipc.on('gamelistSent',function(event,arg)
-{
-    for (var i = 0; i<arg.length;i++)
-    console.log(arg[i]);
-})
+

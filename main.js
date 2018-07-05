@@ -15,6 +15,7 @@ function showWindow() {
     mainWindow.setTitle("HU - Compendium for games");
     mainWindow.setSize(800, 600, 1);
     mainWindow.setResizable(true)
+    //mainWindow.toggleDevTools();
 
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, '/pages/home.html'),
@@ -23,29 +24,8 @@ function showWindow() {
     }));
 }
 
-function dbData_callback(){
-    //get data from db
-    returnArray = [];
-    var imgArray = db.getRows(function (err, data) {
-        if (err) {
-            console.log("ERROR : ", err);
-        } else {
-            var ArrNames = db.getArrayGName(data)
-            var ArrAbout = db.getArrayGAbout(data)
-            var ArrExe = db.getArrayGExe(data)
-            returnArray.push(ArrNames);
-            returnArray.push(ArrAbout);
-            returnArray.push(ArrExe);
-            console.log(returnArray)
-        }
-    }); 
-}
-
 app.on('ready', function () {
     showWindow();
-    db.insert("Game1", "one of the best game", "gameexe.exe");
-    //db.getRows()
-    dbData_callback();
-    
+    //db.insert("Game1", "one of the best game", "gameexe.exe");   
 });
 
