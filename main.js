@@ -25,7 +25,7 @@ function showWindow() {
 function sigOpenWindow() {
     const { ipcMain } = require('electron')
     ipcMain.on('asynchronous-message', (event, arg) => {
-
+        openDialog();
         console.log("-------------------------------------------------------")
 
         event.sender.send('asynchronous-reply', "hello")
@@ -45,6 +45,7 @@ function openDialog() {
 
 app.on('ready', function () {
     showWindow();
+    sigOpenWindow();
 });
 
 
