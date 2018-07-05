@@ -172,7 +172,7 @@ body {
 }
 
 .form-panel {
-    padding: 60px calc(5% + 60px) 60px 60px;
+    padding: 20px 20px 20px 20px;
     box-sizing: border-box;
 }
 

@@ -8,14 +8,15 @@
     <div class="form-toggle"></div>
     <div class="form-panel one">
         <div class="form-header">
-            <h1>Account Login</h1>
+            <h1>Upload Game</h1>
         </div>
         <div class="form-content">
             <form>
-                <div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username" required="required" /></div>
-                <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password" required="required" /></div>
-                <div class="form-group"><label class="form-remember"><input type="checkbox"/>Remember Me</label><a class="form-recovery" href="#">Forgot Password?</a></div>
-                <div class="form-group"><button type="submit">Log In</button></div>
+                <div class="form-group"><label for="username">Name of Game</label><input maxlength="3" minlength="2" type="text" id="username" name="username" required="required" /></div>
+                <div class="form-group"><label for="password">About the Game</label><input maxlength="70" type="text" id="password" name="password"/></div>
+                <div class="form-group"><button type="button">Add Game Exe</button></div>
+                <hr>
+                <div class="form-group"><button type="submit">Upload game (Locally)</button></div>
             </form>
         </div>
     </div>
