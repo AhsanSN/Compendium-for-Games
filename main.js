@@ -22,9 +22,17 @@ function showWindow() {
     }));
 }
 
+function openDialog() {
+    const dialog = require('electron').dialog;
+    console.log(dialog.showOpenDialog({
+        title: 'Select Game Exe (.exe)', filters: [
+            { name: 'Executable (.exe)', extensions: ['exe'] },
+        ], properties: ['openFile']
+    }));
+}
+
 app.on('ready', function () {
     showWindow();
-    //db.insert("Game1", "one of the best game", "gameexe.exe");   
 });
 
 
