@@ -8,33 +8,6 @@ const db = require('./database.js')
 const { app, BrowserWindow } = electron;
 let mainWindow;
 
-var ipc = require('electron').ipcMain;
-
-ipc.on('invokeAction', function(event, data){
-    
-    console.log(data);
-    event.sender.send('actionReply', "Lmao");
-    console.log("ADWA");
-});
-
-function readFile()
-{
-
-    var games;
-    fs.readFile('gameList.txt', function (error, data) {
-        if (!error)
-        {
-            games = data.toString().split("\n");
-            noOfGames = games.length;
-            ipc.on('gamelistSent',function(event,arg)
-            {
-                event.sender.send(games);
-            });
-        }
-    });
-
-}
-
 function showWindow() {
 
     mainWindow = new BrowserWindow({})
@@ -50,10 +23,29 @@ function showWindow() {
     }));
 }
 
+function dbData_callback(){
+    //get data from db
+    returnArray = [];
+    var imgArray = db.getRows(function (err, data) {
+        if (err) {
+            console.log("ERROR : ", err);
+        } else {
+            var ArrNames = db.getArrayGName(data)
+            var ArrAbout = db.getArrayGAbout(data)
+            var ArrExe = db.getArrayGExe(data)
+            returnArray.push(ArrNames);
+            returnArray.push(ArrAbout);
+            returnArray.push(ArrExe);
+            console.log(returnArray)
+        }
+    }); 
+}
+
 app.on('ready', function () {
     showWindow();
-    db.createTable();
-    db.insert();
-    db.getRows()
+    db.insert("Game1", "one of the best game", "gameexe.exe");
+    //db.getRows()
+    dbData_callback();
+    
 });
 
