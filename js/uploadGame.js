@@ -17,10 +17,14 @@ function openDialog() {
 }
 
 function uploadGame() {
-    if ((gameName && gameExe && gameAbout) != "none") {
-        gameName = document.getElementById("username");
-        gameAbout = document.getElementById("about");
+    //console.log()
+    console.log(gameAbout)
+    console.log(gameExe)
+    console.log(gameName)
+    gameName = document.getElementById("username").innerHTML;
+    gameAbout = document.getElementById("about").innerHTML;
+    if (((gameName != "") && (gameExe != "none") && (gameAbout != ""))) {
         //ready for upload
-        db.insert(gameName, gameAbout, arg);
+        db.insert(gameName, gameAbout, gameExe);
     }
 }
