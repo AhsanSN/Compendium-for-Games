@@ -25,14 +25,14 @@ function showWindow() {
 function sigOpenWindow() {
     const { ipcMain } = require('electron')
     ipcMain.on('asynchronous-message', (event, arg) => {
-    getImgfromNet(imgArray);
-        }
-        console.log("-------------------------------------------------------" )
+
+        console.log("-------------------------------------------------------")
 
         event.sender.send('asynchronous-reply', "hello")
         event.returnValue = 'pong'
     })
 }
+    
 
 function openDialog() {
     const dialog = require('electron').dialog;
