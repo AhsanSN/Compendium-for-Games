@@ -50,6 +50,6 @@ a{
 .button:hover {
     cursor: pointer;
     /* letter-spacing: 4px; */
-    background-color: rgba(130,130,130,0.4);
+    background-color: rgba(130, 130, 130, 0.4);
     /* width: 60%; */
 }
