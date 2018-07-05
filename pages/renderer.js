@@ -12,7 +12,7 @@ function dbData_callback(){
 
             //appending to gamelist display
             var table = document.getElementById('todolist');
-
+            table.style.color = "red";
 			for (var i = 0; i < ArrNames.length; i++) {
                 var li = document.createElement("li");
                 var a = document.createElement("a");
@@ -21,10 +21,11 @@ function dbData_callback(){
                 span1.appendChild(document.createTextNode(ArrNames[i]));
                 span1.className = "label";
                 span2.className = "aboutgame";
-                li.onclick = ()=>{lma();};
+                // li.onclick = ()=>{lma();};
                 span2.appendChild(document.createTextNode(ArrAbout[i]));
                 li.appendChild(span1);
                 li.appendChild(span2);
+                li.onmouseover = ()=>{a.style.cursor = "pointer";a.style.color= "red";console.log("WD");};
                 a.appendChild(li);
 				table.appendChild(a);
 			}
