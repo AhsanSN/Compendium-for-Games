@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const db = require('../database.js')
 
 function dbData_callback(){
@@ -25,7 +26,3 @@ function dbData_callback(){
 }
 
 dbData_callback();
-
-
-
-
