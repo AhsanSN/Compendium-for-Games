@@ -25,22 +25,23 @@ function showWindow() {
 function sigOpenWindow() {
     const { ipcMain } = require('electron')
     ipcMain.on('asynchronous-message', (event, arg) => {
-        openDialog();
-        console.log("-------------------------------------------------------")
-
-        event.sender.send('asynchronous-reply', "hello")
+        var exeFile = openDialog();
+        console.log("requesting fileupload window")
+        event.sender.send('asynchronous-reply', exeFile[0])
         event.returnValue = 'pong'
     })
 }
     
 
 function openDialog() {
+    var exeFile;
     const dialog = require('electron').dialog;
-    console.log(dialog.showOpenDialog({
+    exeFile = (dialog.showOpenDialog({
         title: 'Select Game Exe (.exe)', filters: [
             { name: 'Executable (.exe)', extensions: ['exe'] },
         ], properties: ['openFile']
     }));
+    return exeFile;
 }
 
 app.on('ready', function () {
