@@ -8,7 +8,7 @@ function insert(gameName, aboutGame,exePath) {
     stream.write(gameName + '\n');
     stream.write(aboutGame + '\n');
     stream.write(exePath + '\n');
-    console.log("game added");
+    console.log("game added to file");
 }
 
 function getRows(callback) {

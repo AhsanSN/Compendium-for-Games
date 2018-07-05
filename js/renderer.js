@@ -15,7 +15,7 @@ function dbData_callback(){
             console.log(table);
             var ArrGames = [];
             
-			for (var i = 0; i < ArrNames.length; i++) {
+			for (var i = 0; i < ArrNames.length-1; i++) {
                 var li = document.createElement("li");
                 var a = document.createElement("a");
                 var span1 = document.createElement("span");

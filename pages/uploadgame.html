@@ -12,11 +12,12 @@
         </div>
         <div class="form-content">
             <form>
-                <div class="form-group"><label for="username">Name of Game</label><input maxlength="3" minlength="2" type="text" id="username" name="username" required="required" /></div>
-                <div class="form-group"><label for="password">About the Game</label><input maxlength="70" type="text" id="about" name="about"/></div>
-                <div class="form-group"><button onclick="openDialog();" type ="button">Add Game exe</button></div>
+                <!--required="required" -->
+                <div class="form-group"><label for="username">Name of Game</label><input maxlength="23" type="text" id="username" name="username" /></div>
+                <div class="form-group"><label for="password">About the Game</label><input maxlength="70" type="text" id="about" name="about" /></div>
+                <div class="form-group"><button onclick="openDialog();" type="button">Add Game exe</button></div>
                 <hr>
-                <div class="form-group"><button type="submit" onclick="uploadGame();">Upload game (Locally)</button></div>
+                <div class="form-group"><button type="button" onclick="uploadGame();">Upload game (Locally)</button></div>
             </form>
         </div>
     </div>
