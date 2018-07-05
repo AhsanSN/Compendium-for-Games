@@ -31,6 +31,11 @@ body
 	color: #FFF;
     user-select: none;
     text-decoration: none;
+    /* display: block; */
+}
+
+a{
+    display: block;
 }
 
 .button:hover {

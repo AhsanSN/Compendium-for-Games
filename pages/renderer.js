@@ -19,3 +19,10 @@ ipc.on('gamelistSent',function(event,arg)
     for (var i = 0; i<arg.length;i++)
     console.log(arg[i]);
 })
+
+console.log(ipc.sendSync('synchronous-message', 'ping')) // prints "pong"
+
+ipc.on('asynchronous-reply', (event, arg) => {
+  console.log(arg) // prints "pong"
+})
+ipc.send('asynchronous-message', 'ping')

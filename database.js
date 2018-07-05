@@ -1,6 +1,6 @@
 const db = require('electron-db');
 const electron = require('electron');
-
+const exec = require('child_process').execFile;
 const app = electron.app || electron.remote.app;
 
 function createTable() {
@@ -44,6 +44,15 @@ function getParticRow() {
         console.log(result);
     })
 }
+
+var fun =function(){
+   console.log("fun() start");
+   exec('myexe.exe', function(err, data) {  
+        console.log(err)
+        console.log(data.toString());                       
+    });  
+}
+fun();
 
 //exporting
 module.exports.createTable = createTable

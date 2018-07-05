@@ -26,6 +26,7 @@ function readFile()
         {
             games = data.toString().split("\n");
             noOfGames = games.length;
+            console.log(games);
             ipc.on('gamelistSent',function(event,arg)
             {
                 event.sender.send(games);
@@ -50,10 +51,21 @@ function showWindow() {
     }));
 }
 
+ipc.on('asynchronous-message', (event, arg) => {
+    console.log(arg) // prints "ping"
+    event.sender.send('asynchronous-reply', 'pong')
+  })
+
+  
+
 app.on('ready', function () {
     showWindow();
     db.createTable();
     db.insert();
     db.getRows()
+    readFile();
+    mainWindow.webContents.send("asynchronous-reply","bar");
+    
+    console.log("KKL");
 });
 
