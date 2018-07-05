@@ -13,26 +13,42 @@
         <div class="form-content">
             <form>
                 <div class="form-group"><label for="username">Name of Game</label><input maxlength="3" minlength="2" type="text" id="username" name="username" required="required" /></div>
-                <div class="form-group"><label for="password">About the Game</label><input maxlength="70" type="text" id="password" name="password"/></div>
+                <div class="form-group"><label for="password">About the Game</label><input maxlength="70" type="text" id="about" name="about"/></div>
                 <div class="form-group"><button onclick="openDialog();" type ="button">Add Game exe</button></div>
                 <hr>
-                <div class="form-group"><button type="submit">Upload game (Locally)</button></div>
+                <div class="form-group"><button type="submit" onclick="uploadGame();">Upload game (Locally)</button></div>
             </form>
         </div>
     </div>
 </div>
 </body>
 <script>
+    //game Details
+    var gameName = "none";
+    var gameAbout = "none"
+    var gameExe = "none";
     //using ipc to openwindow
     const electron = require('electron');
+    const db = require('../database.js');
     const { ipcRenderer } = require('electron');
 
     ipcRenderer.on('asynchronous-reply', (event, arg) => {
-        console.log(arg) // prints "pong
+        console.log(arg) // received exe path
+        gameExe = arg;
     });
 
     function openDialog() {
         ipcRenderer.send('asynchronous-message', 'ping');
     }
+
+    function uploadGame() {
+        if ((gameName && gameExe && gameAbout) != "none") {
+            gameName = document.getElementById("username");
+            gameAbout = document.getElementById("about");
+            //ready for upload
+            db.insert(gameName, gameAbout, arg);
+        }
+    }
+
 </script>
 </html>
