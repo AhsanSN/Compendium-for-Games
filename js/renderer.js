@@ -28,6 +28,7 @@ function dbData_callback(){
                 span2.appendChild(document.createTextNode(ArrAbout[i]));
                 li.appendChild(span1);
                 li.appendChild(span2);
+                li.className = "entries";
                 a.appendChild(li);
                 table.appendChild(a);
 			}

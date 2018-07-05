@@ -19,12 +19,11 @@ a{
 }
 
 .md{
-    margin: 0vh 30vw;
+    /* margin: 0vh 25vw; */
 }
 
 #todolist {
-    display: flex;
-    align-self: center;
+	/* width: 50%; */
 	scroll-behavior: auto;
 	color: #FFF;
 	padding: 2rem 3rem 3rem;
@@ -38,7 +37,10 @@ a{
 	font-weight: normal;
 	font-size: 1.6rem;
 	letter-spacing: 0.05em;
-	border-bottom: 1px solid rgba(255,255,255,.3);
+    border-bottom: 1px solid rgba(255,255,255,.3);
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #todolist h1 span {
@@ -46,7 +48,8 @@ a{
 	font-size: 0.8rem;
 	margin-bottom: 0.7rem;
 	margin-left: 3px;
-	margin-top: 0.2rem;
+    margin-top: 0.2rem;
+    text-align: center;
 }
 
 #todolist .emptylist {
@@ -67,13 +70,23 @@ a{
 }
 
 #todolist li {
-	display: flex;
-	margin: 0 -3rem 4px;
+    display: flex;
+    width: 70%;
+    margin-bottom: 10px;
+    /* display: table; */
+    margin-right: auto;
+    margin-left: auto;
+    /* margin: 10px auto; */
 	padding: 1.1rem 3rem;
 	justify-content: space-between;
 	align-items: center;
-    background: rgba(255,255,255,0.1);
+    background-color: rgba(92, 92, 92, 0.2);
     font: "Roboto";
+    transition: background-color 0.7s ease;
+}
+
+#todolist li:hover {
+    background-color: rgba(92, 92, 92, 0.8) !important;
 }
 
 #todolist .actions {
