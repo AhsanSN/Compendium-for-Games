@@ -11,7 +11,8 @@ function dbData_callback(){
             var ArrExe = db.getArrayGExe(data)
 
             //appending to gamelist display
-            var table = document.getElementById('todolist');
+            var table = document.getElementById('list');
+            console.log(table);
             var ArrGames = [];
             
 			for (var i = 0; i < ArrNames.length; i++) {
