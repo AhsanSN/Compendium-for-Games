@@ -1,0 +1,40 @@
+.button {
+    /* background: #3498db; */
+    width: 180px;
+    padding: 14px 0;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 3px;
+    background: linear-gradient(to bottom, rgba(73,110,153,1) 0%,rgba(41,137,216,1) 98%);;
+    transition: 0.3s ease;
+}
+
+body
+{
+    background-color: #36607c;
+    margin : 0vh;
+    height: 100%;
+    padding: 0vh;
+}
+
+.allbuttons {
+    padding: 30vh;
+    text-decoration: none
+}
+
+.button p, a{
+	font-family: "sans-serif";
+	text-align: center;
+	text-transform: uppercase;
+	color: #FFF;
+    user-select: none;
+    text-decoration: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    letter-spacing: 4px;
+    width: 60%;
+}
