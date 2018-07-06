@@ -1,5 +1,9 @@
 const db = require('../database.js')
 
+function runGame(gameIndex) {
+    console.log(gameIndex)
+}
+
 function dbData_callback(){
     //get data from db
     var imgArray = db.getRows(function (err, data) {
@@ -12,11 +16,11 @@ function dbData_callback(){
 
             //appending to gamelist display
             var table = document.getElementById('list');
-            console.log(table);
             var ArrGames = [];
-            
+            console.log(table)
 			for (var i = 0; i < ArrNames.length-1; i++) {
                 var li = document.createElement("li");
+                var div = document.createElement("div");
                 var a = document.createElement("a");
                 var span1 = document.createElement("span");
                 var span2 = document.createElement("span");
@@ -24,13 +28,16 @@ function dbData_callback(){
                 span1.className = "label";
                 span2.className = "aboutgame";
                 a.href = "javascript: void(0)";
-                // a.onclick = ()=>{console.log(d);};
+                div.id = i
+                div.onclick = () => { runGame("dss" + i)};
                 span2.appendChild(document.createTextNode(ArrAbout[i]));
                 li.appendChild(span1);
                 li.appendChild(span2);
                 li.className = "entries";
                 a.appendChild(li);
-                table.appendChild(a);
+                div.appendChild(a);
+
+                table.appendChild(div);
 			}
         }
     }); 

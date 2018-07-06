@@ -17,14 +17,28 @@ function openDialog() {
 }
 
 function uploadGame() {
-    //console.log()
+    gameName = document.getElementById("username").value;
+    gameAbout = document.getElementById("about").value;
     console.log(gameAbout)
     console.log(gameExe)
     console.log(gameName)
-    gameName = document.getElementById("username").innerHTML;
-    gameAbout = document.getElementById("about").innerHTML;
-    if (((gameName != "") && (gameExe != "none") && (gameAbout != ""))) {
+    //if (((gameName != "") && (gameExe != "none") && (gameAbout != ""))) {
         //ready for upload
-        db.insert(gameName, gameAbout, gameExe);
-    }
+        console.log("ready for upload")
+        //chaning file name
+        db.getRows(function (err, data) {
+            if (err) {
+                console.log("ERROR : ", err);
+            } else {
+                var nGames = (data.length-1) / 3
+                console.log("nGames = " + nGames)
+                var newGameExe = "../game" + (nGames + 1)
+                console.log(newGameExe)
+                document.getElementById("form").innerHTML = "<p>Your game has been successfully uploaded to this software's local storage.</p> <h5> <a href='home.html'> Return to main menu</a></h5>";
+                //transfer file to /games/ and change name of exe
+
+                //db.insert(gameName, gameAbout, gameExe);
+            }
+        })
+   // }
 }

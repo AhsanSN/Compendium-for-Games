@@ -11,11 +11,14 @@ body{
     align-self: center;
 }
 
+span.aboutgame {
+    font-size: 13px;
+}
+
 a{
     font-family: 'Quicksand', sans-serif;
     color: white;
     text-decoration: none; /* no underline */
-    
 }
 
 .header{
@@ -26,6 +29,15 @@ a{
 	margin-left: 14.2vw;
 	margin-right: auto;
 	transition: all 0.4s ease-out;
+}
+
+#return {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.7rem;
+    margin-left: 12vw;
+    margin-top: 0.2rem;
+    text-align: left;
 }
 
 #todolist {
@@ -65,6 +77,16 @@ a{
     /* width: 70%; */
 	margin-left: auto;
 	margin-right: auto;
+    text-align: center;
+}
+
+h3 {
+    /*text-align:center;*/
+    font-weight: normal;
+    font-size: 1.2rem;
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.4rem;
     text-align: center;
 }
 
