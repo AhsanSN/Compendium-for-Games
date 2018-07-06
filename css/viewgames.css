@@ -51,7 +51,8 @@ a{
   } */ */
 
   li {
-	transition: background-color 0.4s ease-out;
+	transition: all 0.4s ease-out;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 	opacity: 1;
 	height: 2em;
   }
@@ -105,7 +106,8 @@ a{
 }
 
 #todolist li:hover, .header:hover{
-    background-color: rgba(92, 92, 92, 0.8) !important;
+	background-color: rgba(92, 92, 92, 0.8) !important;
+	box-shadow: 0 0 8px rgba(250, 250, 250, 0.6);
 }
 
 #todolist
