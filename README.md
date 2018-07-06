@@ -1,5 +1,5 @@
 # Compendium-for-Games
-A SEGA type compendium where people can play game of their choice.
+A SEGA type compendium where people can play game of their choice. The compendium contains many games and contains the feature to add new games - locally as well as globally to the server. It can also download new games from the our cloud. The uploading of a game to the cloud through the software is managed by us to prevent uploading of infectious executable files.
 
 Built on NodeJS using Electron.
 
