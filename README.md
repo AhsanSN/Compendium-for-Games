@@ -1,9 +1,9 @@
 # Compendium-for-Games
-A SEGA type compendium where people can play game of their choice. The compendium contains many games and contains the feature to add new games - locally as well as globally to the server. It can also download new games from the our cloud. The uploading of a game to the cloud through the software is managed by us to prevent uploading of infectious executable files.
+A SEGA type compendium where people can play game of their choice. The compendium contains many games and contains the feature to add new games - locally as well as globally to the server. It can also download new games from our cloud. The uploading of a game to the cloud through the software is managed by us to prevent uploading of infectious executable files.
 
 Built on NodeJS using Electron.
 
-## Collaborators
+## Made by
 
 1) Syed Ahsan Ahmed
 2) Minhaj Ahmed Moin
@@ -19,8 +19,7 @@ Built on NodeJS using Electron.
 
 ### For Users (non-developers) (running the software)
 
-1) Find the software .exe in the "release" folder.
-2) Run it.
+Download the Release Version.
 
 ## Special instructions
 
