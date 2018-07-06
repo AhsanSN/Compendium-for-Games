@@ -22,5 +22,11 @@ Built on NodeJS using Electron.
 1) Find the software .exe in the "release" folder.
 2) Run it.
 
+## Special instructions
 
+1) Please don't change the contents in the text file as it has been used as a database for the software.
+2) Dont rename the games in the "games" folder as it can cause the software to misbehave.
 
+## Contributions
+
+We are always open to contributions. If you want to become a Collaborator, send a pull request containing 10+ lines of scripting code.
