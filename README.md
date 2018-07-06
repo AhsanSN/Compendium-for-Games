@@ -30,3 +30,5 @@ Built on NodeJS using Electron.
 ## Contributions
 
 We are always open to contributions. If you want to become a Collaborator, send a pull request containing 10+ lines of scripting code.
+
+## Screenshots
