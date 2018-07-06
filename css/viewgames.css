@@ -18,8 +18,14 @@ a{
     
 }
 
-.md{
-    /* margin: 0vh 25vw; */
+.header{
+	background-color: rgba(92, 92, 92, 0.2) !important;
+	/* margin-left: 10px; */
+	padding: 20px;
+	width: 70%;
+	margin-left: 14.2vw;
+	margin-right: auto;
+	transition: all 0.4s ease-out;
 }
 
 #todolist {
@@ -32,10 +38,7 @@ a{
     font: "Roboto";
 }
 
-li{
-	/* animation: slide-in 1s ease-in-out 5s; */
-}
-@keyframes slidein {
+/* @keyframes slidein {
 	from {
 	  margin-left: 100%;
 	  width: 300%; 
@@ -45,24 +48,22 @@ li{
 	  margin-left: 0%;
 	  width: 100%;
 	}
-  }
+  } */ */
 
   li {
-	transition: all 0.4s ease-out;
-	
-	height: 2em;
-  }
-  li:show {
+	transition: background-color 0.4s ease-out;
 	opacity: 1;
+	height: 2em;
   }
 #todolist h1 {
 /*text-align:center;*/
 	font-weight: normal;
 	font-size: 1.6rem;
-	letter-spacing: 0.05em;
+	/* letter-spacing: 0.05em; */
     border-bottom: 1px solid rgba(255,255,255,.3);
-    width: 70%;
-    margin: 0 auto;
+    /* width: 70%; */
+	margin-left: auto;
+	margin-right: auto;
     text-align: center;
 }
 
@@ -70,7 +71,6 @@ li{
 	display: block;
 	font-size: 0.8rem;
 	margin-bottom: 0.7rem;
-	margin-left: 3px;
     margin-top: 0.2rem;
     text-align: center;
 }
@@ -86,10 +86,6 @@ li{
 #todolist ul {
 	margin-top: 2.6rem;
 	list-style: none;
-}
-
-#todolist .todolist-move {
-	transition: transform 1s;
 }
 
 #todolist li {
@@ -108,40 +104,11 @@ li{
     transition: background-color 0.7s ease;
 }
 
-#todolist li:hover {
+#todolist li:hover, .header:hover{
     background-color: rgba(92, 92, 92, 0.8) !important;
 }
 
-#todolist .actions {
-	flex-shrink: 0;
-	padding-left: 0.7em;
-}
-
-#todolist .label {
-	position: relative;
-	transition: opacity .2s linear;
-}
-
-#todolist .done .label {
-	opacity: .6;
-}
-
-#todolist .done .label:before {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: -.5rem;
-	display: block;
-	width: 0%;
-	height: 1px;
-	background: #FFF;
-	animation: strikeitem .3s ease-out 0s forwards;
-}
-
-#todolist .btn-picto {
-	border: none;
-	background: none;
-	-webkit-appearance: none;
-	cursor: pointer;
-	color: #FFF;
+#todolist
+{
+	margin: auto;
 }
