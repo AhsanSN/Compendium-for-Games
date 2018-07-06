@@ -57,7 +57,7 @@ body{
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 6px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -79,7 +79,13 @@ body{
 
 .form-group label {
     color: #FFFFFF;
-    padding-top: 12px;
+    /* padding-top: 12px; */
+    /* margin-top: 10vh; */
+}
+
+.form-group
+{
+    margin-top: 12px;
 }
 
 .form-group input {
