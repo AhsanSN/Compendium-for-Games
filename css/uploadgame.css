@@ -12,10 +12,10 @@ body{
 }
 .form{
     background: rgba(92,92,92,0.2);
-    margin-top: 20vh ;
+    margin-top: 8vh ;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 70%;
     padding: 20px;
     /* margin-right: auto; */
 }
@@ -54,9 +54,15 @@ p {
     font-size: 21px;
 **/
 
-.form-content
+p {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8) !important;
+    font-size: 21px;
+}
+    .form-content
 {
-    width: 50%;
+    width: 90%;
     margin-top: 2vh;
     margin-right: auto;
     margin-left: auto;
@@ -310,6 +316,23 @@ a {
     color: #4285F4 !important;
 }
 **/
+
+a {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8) !important;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+h5 {
+    text-align: center;
+    color:azure;
+    font-size: 15px;
+    background: rgba(88, 88, 88, 0.151);
+    padding: 2px 12px;
+    color: #FFFFFF;
+}
+
 .form-group input:focus {
     background-color: rgba(0, 0, 0, 0.7);
 }
