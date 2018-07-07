@@ -25,6 +25,8 @@ Download the Release Version.
 
 1) Please don't change the contents in the text file as it has been used as a database for the software.
 2) Dont rename the games in the "games" folder as it can cause the software to misbehave.
+3) Don't seperate any file, including the software's exe, with the software folder.
+4) If you want to place the software's exe on your desktop, place a shortcut of the software's exe.
 
 ## Contributions
 
