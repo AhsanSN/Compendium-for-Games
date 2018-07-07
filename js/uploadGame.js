@@ -36,7 +36,7 @@ function uploadGame() {
                 console.log(newGameExe)
                 document.getElementById("form").innerHTML = "<p>Your game has been successfully uploaded to this software's local storage.</p> <h5> <a href='home.html'> Return to main menu</a></h5>";
                 //transfer file to /games/ and change name of exe
-                fs.copyFile('source.txt', "../games/" + nGames+1+".exe", (err) => {
+                fs.copyFile(gameExe, "../games/" + nGames+1+".exe", (err) => {
                     if (err) throw err;
                     console.log('file was copied to games');
                 });
