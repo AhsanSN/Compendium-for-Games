@@ -1,7 +1,11 @@
 const db = require('../database.js')
+const { ipcRenderer } = require('electron');
 
 function runGame(gameIndex) {
-    console.log(gameIndex)
+    var gameName = "../games/game" + gameIndex + ".exe";
+    console.log(gameName)
+    ipcRenderer.send('runGame', "asd");
+    //db.runExe(gameName)
 }
 
 function dbData_callback(){
@@ -41,9 +45,9 @@ function dbData_callback(){
             for (var i = 0; i < ArrNames.length - 1; i++) {
                 itemLists[i].i = i;
                 itemLists[i].onclick = (function () {
-                        console.log("no "+this.i)
-                        // TODO ---
-                        // Your handler code here
+                    var gameNumber = this.i;
+                    runGame(gameNumber);
+                    console.log("no "+this.i)
                 });
             }
 

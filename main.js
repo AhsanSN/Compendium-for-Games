@@ -30,6 +30,9 @@ function sigOpenWindow() {
         event.sender.send('asynchronous-reply', exeFile[0])
         event.returnValue = 'pong'
     })
+    ipcMain.on('runGame', (event, arg) => {
+        console.log("received game signal")
+    })
 }
     
 

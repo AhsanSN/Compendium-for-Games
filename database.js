@@ -3,6 +3,8 @@ const exec = require('child_process').execFile;
 const app = electron.app || electron.remote.app;
 const fs = require('fs');
 var stream = fs.createWriteStream("gamesDB.txt", { flags: 'a' });
+const { ipcMain } = require('electron')
+
 
 function insert(gameName, aboutGame,exePath) {
     stream.write(gameName + '\n');
@@ -53,13 +55,22 @@ function getArrayGExe(fullArray){
     return arrayExe;
 }
 
-function runExe(exe = "myexe.exe"){
-    console.log("running exe");
+function runExe(exe = "myexe.exe") {
+    console.log("running exe" + exe);
     exec(exe, function(err, data) {  
         console.log(err)
         console.log(data.toString());                       
     });
 }
+
+app.on('ready', function () {
+    console.log("ready")
+    ipcMain.on('runGame', (event, arg) => {
+        console.log("received game signal")
+    })
+});
+
+
 
 //exporting
 module.exports.insert = insert
