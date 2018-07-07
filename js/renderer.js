@@ -13,35 +13,45 @@ function dbData_callback(){
             var ArrNames = db.getArrayGName(data)
             var ArrAbout = db.getArrayGAbout(data)
             var ArrExe = db.getArrayGExe(data)
-            var list = document.getElementsByClassName("li")
+
+            console.log(itemLists)
             //appending to gamelist display
             var table = document.getElementById('list');
-            console.log("list" + list);
             var ArrGames = [];
             console.log(table)
 			for (var i = 0; i < ArrNames.length-1; i++) {
                 var li = document.createElement("li");
-                var div = document.createElement("div");
-                var a = document.createElement("a");
                 var span1 = document.createElement("span");
                 var span2 = document.createElement("span");
                 span1.appendChild(document.createTextNode(ArrNames[i]));
                 span1.className = "label";
                 span2.className = "aboutgame";
-                a.href = "javascript: void(0)";
-                div.id = i
-                div.onclick = () => { runGame("dss" + i)};
                 span2.appendChild(document.createTextNode(ArrAbout[i]));
                 li.appendChild(span1);
                 li.appendChild(span2);
                 li.className = "entries";
-                a.appendChild(li);
-                div.appendChild(a);
+                table.appendChild(li);
 
-                table.appendChild(div);
-			}
+                //testing
+            }
+            var div = document.getElementById("list");
+            var itemLists = div.getElementsByTagName("li")
+            console.log("lis" +itemLists)
+
+            for (var i = 0; i < ArrNames.length - 1; i++) {
+                itemLists[i].i = i;
+                itemLists[i].onclick = (function () {
+                        console.log("no "+this.i)
+                        // TODO ---
+                        // Your handler code here
+                });
+            }
+
         }
     }); 
 }
 
-dbData_callback();
+//dbData_callback();
+window.onload = function () {
+    dbData_callback();
+ }
