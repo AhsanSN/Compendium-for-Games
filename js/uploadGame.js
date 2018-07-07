@@ -34,10 +34,11 @@ function uploadGame() {
                 var nGames = (data.length-1) / 3
                 console.log("nGames = " + nGames)
                 var newGameExe = "../game" + (nGames + 1)
+                nGames = nGames + 1;
                 console.log(newGameExe)
                 document.getElementById("form").innerHTML = "<p>Your game has been successfully uploaded to this software's local storage.</p> <h5> <a href='home.html'> Return to main menu</a></h5>";
                 //transfer file to /games/ and change name of exe
-                fs.copyFile(gameExe, "../games/" + nGames+1+".exe", (err) => {
+                fs.copyFile(gameExe, "../games/game" + nGames+".exe", (err) => {
                     if (err) throw err;
                     console.log('file was copied to games');
                 });
