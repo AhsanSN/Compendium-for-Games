@@ -13,9 +13,10 @@ function dbData_callback(){
             var ArrNames = db.getArrayGName(data)
             var ArrAbout = db.getArrayGAbout(data)
             var ArrExe = db.getArrayGExe(data)
-
+            var list = document.getElementsByClassName("li")
             //appending to gamelist display
             var table = document.getElementById('list');
+            console.log("list" + list);
             var ArrGames = [];
             console.log(table)
 			for (var i = 0; i < ArrNames.length-1; i++) {

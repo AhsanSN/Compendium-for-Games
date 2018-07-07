@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\css",
+    "\\js",
+    "\\pages"
   ],
-  "SelectedNode": "\\main.js",
+  "SelectedNode": "\\css\\uploadgame.css",
   "PreviewInSolutionExplorer": false
 }
