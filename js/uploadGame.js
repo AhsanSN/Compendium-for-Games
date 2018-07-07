@@ -4,6 +4,7 @@ var gameAbout = "none"
 var gameExe = "none";
 //using ipc to openwindow
 const electron = require('electron');
+const fs = require('fs');
 const db = require('../database.js');
 const { ipcRenderer } = require('electron');
 
