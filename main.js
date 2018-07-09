@@ -45,6 +45,7 @@ function openDialog() {
             { name: 'Game Executable (.exe)'},
         ], properties: ['openDirectory']
     }));
+    getFilesFromDir(exeFile);
     return exeFile;
 }
 
@@ -54,12 +55,12 @@ app.on('ready', function () {
 });
 
 function getFilesFromDir(dir) {
-    fs.readDir(myDir, function (dir) {
-        // es5
+    fs.readdir(dir, function (dir) {
         for (var i = 0, l = dir.length; i < l; i++) {
             var filePath = dir[i];
             console.log(filePath)
         }
     });
+}
 
 
