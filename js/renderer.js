@@ -4,8 +4,8 @@ const { ipcRenderer } = require('electron');
 function runGame(gameIndex) {
     var gameName = "../games/game" + gameIndex + ".exe";
     console.log(gameName)
-    ipcRenderer.send('runGame', "asd");
-    //db.runExe(gameName)
+    //ipcRenderer.send('runGame', "asd");
+    db.runExe(gameName)
 }
 
 function dbData_callback(){
