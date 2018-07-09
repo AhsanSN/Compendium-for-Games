@@ -45,7 +45,8 @@ function openDialog() {
             { name: 'Game Executable (.exe)'},
         ], properties: ['openDirectory']
     }));
-    getFilesFromDir(exeFile);
+    console.log("asdasdasd" + exeFile)
+    getFilesFromDir("C:\Users\Ahsan Ahmed\Documents\GitHub\Compendium-for-Games");
     return exeFile;
 }
 
