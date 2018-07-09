@@ -40,9 +40,9 @@ function openDialog() {
     var exeFile;
     const dialog = require('electron').dialog;
     exeFile = (dialog.showOpenDialog({
-        title: 'Select Game Exe (.exe)', filters: [
-            { name: 'Game Executable (.exe)', extensions: ['exe'] },
-        ], properties: ['openFile']
+        title: 'Select Game Folder (Images, exes, etc)', filters: [
+            { name: 'Game Executable (.exe)'},
+        ], properties: ['openDirectory']
     }));
     return exeFile;
 }
