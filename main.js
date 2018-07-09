@@ -2,6 +2,7 @@ const electron = require('electron')
 const url = require('url')
 const path = require('path')
 const express = require('express');
+const fs = require('fs');
 
 const { app, BrowserWindow } = electron;
 let mainWindow;
@@ -52,5 +53,13 @@ app.on('ready', function () {
     sigOpenWindow();
 });
 
+function getFilesFromDir(dir) {
+    fs.readDir(myDir, function (dir) {
+        // es5
+        for (var i = 0, l = dir.length; i < l; i++) {
+            var filePath = dir[i];
+            console.log(filePath)
+        }
+    });
 
 
