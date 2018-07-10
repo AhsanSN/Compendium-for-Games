@@ -81,3 +81,7 @@ We want to collect as many games as possible for our software. So, if you have c
 2) Compress the folder
 3) fork this repository and add the compressed folder to this repository's "/games" folder.
 4) Send a pull request.
+
+## Game Contributors
+
+1) Minhaj Ahmed Moin (Bricrumble)
