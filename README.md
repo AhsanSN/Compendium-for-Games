@@ -33,3 +33,40 @@ Download the Release Version.
 We are always open to contributions. If you want to become a Collaborator, send a pull request containing 10+ lines of scripting code.
 
 ## Screenshots
+
+<table>
+  <tbody>
+    <tr>
+      <!-- Video 1 -->
+      <td align="center">
+          <img width="290" alt="Compendium for games" src="/screenshots/Screenshot%20(571).png">
+          <br>
+      </td>
+      <!-- Video 2 -->
+      <td align="center">
+          <img width="290" alt="Compendium for games" src="/screenshots/Screenshot%20(572).png">
+          <br>
+      </td>
+      <!-- Video 3 -->
+      <td align="center">
+          <img width="290" alt="Compendium for games" src="/screenshots/Screenshot%20(573).png">
+          <br>
+      </td>
+    </tr>
+    <tr>
+      <!-- Video 4 -->
+      <td align="center">
+          <img width="290" alt="Compendium for games" src="/screenshots/Screenshot%20(574).png">
+          <br>
+      </td>
+       <td align="center">
+          <img width="290" alt="Compendium for games" src="/screenshots/Screenshot%20(575).png">
+          <br>
+      </td>
+       <td align="center">
+          <img width="290" alt="Compendium for games" src="/screenshots/Screenshot%20(576).png">
+          <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
