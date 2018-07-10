@@ -1,31 +1,32 @@
 {
-  "name": "compendium-for-games",
-  "version": "1.0.0",
-  "description": "A Sega type compendium for games that were/are made by students. ",
-  "main": "main.js",
-  "scripts": {
-    "start": "Electron  .",
-    "package": "electron-packager . compendium-for-games --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Game Compendium\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AhsanSN/Compendium-for-Games.git"
-  },
-  "keywords": [
-    "Compendium",
-    "games",
-    "sega"
-  ],
-  "author": "Syed Ahsan Ahmed",
-  "co-author": "Minhaj Ahmed Moin",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.16.3",
-    "express-validator": "^5.2.0",
-    "uuid": "^3.2.1"
-  },
-  "devDependencies": {
-    "electron-db": "^0.8.1",
-    "electron-packager": "^12.1.0"
-  }
+    "name": "compendium-for-games",
+    "productName": "HU - Compendium for Games",
+    "version": "1.0.0",
+    "description": "A Sega type compendium for games that were/are made by students. ",
+    "main": "main.js",
+    "scripts": {
+        "start": "Electron  .",
+        "package": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"HU - Compendium for Games\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AhsanSN/Compendium-for-Games.git"
+    },
+    "keywords": [
+        "Compendium",
+        "games",
+        "sega"
+    ],
+    "author": "Syed Ahsan Ahmed",
+    "co-author": "Minhaj Ahmed Moin",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.16.3",
+        "express-validator": "^5.2.0",
+        "uuid": "^3.2.1"
+    },
+    "devDependencies": {
+        "electron-db": "^0.8.1",
+        "electron-packager": "^12.1.0"
+    }
 }
