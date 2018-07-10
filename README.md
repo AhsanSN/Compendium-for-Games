@@ -28,10 +28,6 @@ Download the Release Version.
 3) Don't seperate any file, including the software's exe, with the software folder.
 4) If you want to place the software's exe on your desktop, place a shortcut of the software's exe.
 
-## Contributions
-
-We are always open to contributions. If you want to become a Collaborator, send a pull request containing 10+ lines of scripting code.
-
 ## Screenshots
 
 <table>
@@ -70,3 +66,18 @@ We are always open to contributions. If you want to become a Collaborator, send 
     </tr>
   </tbody>
 </table>
+
+## Contributions
+
+We are always open to contributions. If you want to become a Collaborator, send a pull request containing 10+ lines of scripting code.
+
+## Game Contributions
+
+We want to collect as many games as possible for our software. So, if you have created a game, here is how you can add it to the software,
+
+### Instructions for contributing a game
+
+1) Have a master folder named anything containing all the projects files (.exe, images, sprites, all media etc)
+2) Compress the folder
+3) fork this repository and add the compressed folder to this repository's "/games" folder.
+4) Send a pull request.
