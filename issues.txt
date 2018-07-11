@@ -50,6 +50,11 @@ issue 12: Styling about.html
 
 Properly style <code>about.css</code> and <code>about.html</code> such that it looks good.
 
+issue 13: Add .vs to .gitignore
+
+I have tried literally everything but I cant get the .gitignore to ignore my <code>.vs\</code> folder. Serious help is needed here.
+
+
 Rough: <code></code>
 
 Best of luck. 
