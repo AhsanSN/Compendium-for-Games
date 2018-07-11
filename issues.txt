@@ -38,6 +38,10 @@ issue 9:
 
 Use "electron-db" as the software's database instead of <code>GamesDB.txt</code>. Replace all the present functions. Create a new file <code>e-Database.js</code> and dont edit the current <code>database.js</code>.
 
+issue 10:
+
+Take advantage of asynchronous programming and load all static files (css/js) from main.js instead of the respective <code>.html</code> files. This should reduce the loading time of the software.
+
 Rough: <code></code>
 
 Best of luck. 
