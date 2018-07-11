@@ -1,0 +1,37 @@
+issues (will be opened on github)
+
+issue 1:
+
+Create a function inside "js/renderer.js" can takes a folder name as input, and returns the static path (C:/...) of the the .exe file present in it. You are told that the folder will always contain one and only one .exe file.
+
+issue 2:
+
+Edit the <code>viewgames.css</code> and <code>viewgames.html</code> such that the viewgames.html is divided into two vertical parts. One contains the list of games as in the present code, and the other will have space for 1 screenshot of the game.
+
+issue 3:
+
+(linked to issue 2)
+
+Create a function in renderer.js that takes as input the path of an image file and shows it as the screenshot of the present game.
+
+issue 4:
+
+Edit the database.js such that now GamesDB.txt stores 4 values instead of 3. The new stored value (4th line in database)should be an image path. Make new functions if required.
+
+issue 5
+
+Edit <code>uploadgame.html</code> and <code>uploadgame.js</code> and add an option of uploading 1 screenshot image of the image. This image path should then be added to the database. 
+
+issue 6:
+
+Add another screen "gameRunning.html" that should run once an exe has started running. It should contain a return option that sends the user to "viewGames.html"
+
+issue 7:
+
+Edit the "js/renderer.js", such that when a game is selected, the path of the selected game should not be dynamically made, but should be selected from "GamesDB.txt". Make necessary functions in <code>database.js</code>
+
+Best of luck.
+
+
+
+
