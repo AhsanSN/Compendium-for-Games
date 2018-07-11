@@ -42,6 +42,10 @@ issue 10:
 
 Take advantage of asynchronous programming and load all static files (css/js) from main.js instead of the respective <code>.html</code> files. This should reduce the loading time of the software.
 
+issue 11:
+
+Create a function <code>getUsername()</code> inside <code>uploadGame.js</code> that returns the computers username. This will later be used when uploading the game to the cloud using the software.
+
 Rough: <code></code>
 
 Best of luck. 
