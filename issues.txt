@@ -46,6 +46,10 @@ issue 11: Get username of the loggedin user
 
 Create a function <code>getUsername()</code> inside <code>uploadGame.js</code> that returns the computers username. This will later be used when uploading the game to the cloud using the software.
 
+issue 12: Styling about.html
+
+Properly style <code>about.css</code> and <code>about.html</code> such that it looks good.
+
 Rough: <code></code>
 
 Best of luck. 
