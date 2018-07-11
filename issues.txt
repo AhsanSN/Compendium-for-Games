@@ -12,7 +12,7 @@ issue 3:
 
 (linked to issue 2)
 
-Create a function in renderer.js that takes as input the path of an image file and shows it as the screenshot of the present game.
+Create a function in <code>renderer.js</code> that takes as input the path of an image file and shows it as the screenshot of the present game.
 
 issue 4:
 
@@ -30,7 +30,17 @@ issue 7:
 
 Edit the "js/renderer.js", such that when a game is selected, the path of the selected game should not be dynamically made, but should be selected from "GamesDB.txt". Make necessary functions in <code>database.js</code>
 
-Best of luck.
+issue 8:
+
+Create necessay file and functions that are run when the software is run. The file will check if there is a software's shortcut on the user's desktop. If not, it will create the exe's shortcut.
+
+issue 9:
+
+Use "electron-db" as the software's database instead of <code>GamesDB.txt</code>. Replace all the present functions. Create a new file <code>e-Database.js</code> and dont edit the current <code>database.js</code>.
+
+Rough: <code></code>
+
+Best of luck. 
 
 
 
