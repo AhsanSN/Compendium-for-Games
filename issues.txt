@@ -4,7 +4,7 @@ issue 1: Find .exe file in folder
 
 Create a function inside "js/renderer.js" can takes a folder name as input, and returns the static path (C:/...) of the the .exe file present in it. You are told that the folder will always contain one and only one .exe file.
 
-issue 2: space for showing a screenshot
+issue 2: space for showing the screenshot
 
 Edit the <code>viewgames.css</code> and <code>viewgames.html</code> such that the viewgames.html is divided into two vertical parts. One contains the list of games as in the present code, and the other will have space for 1 screenshot of the game.
 
@@ -54,6 +54,9 @@ issue 13: Add .vs to .gitignore
 
 I have tried literally everything but I cant get the .gitignore to ignore my <code>.vs\</code> folder. Serious help is needed here.
 
+issue 14: Escape html special characters
+
+Escape all types of html special characters in the <code>uploadgame.js</code> such that Javascript and HTML injection is not possible.
 
 Rough: <code></code>
 
